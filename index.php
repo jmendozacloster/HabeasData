@@ -9,7 +9,7 @@
 
 <body>
     <!-- Encabezado de la página -->
-    <h1>Dashboard Habeas Data Prueba GIT</h1>
+    <h1>Dashboard Habeas Data</h1>
     <!-- Enlace para crear una nueva firma -->
     <div><a href="./newsign.php">Nueva Firma</a></div>
     <!-- Título para la sección de documentos firmados -->
