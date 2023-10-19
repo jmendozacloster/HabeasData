@@ -110,21 +110,15 @@ h1 {
 
 /* Estilos generales de la tabla */
 table {
-    font-family: 'Dosis', sans-serif;  /* Especifica la fuente de la tabla. */
-    width: 80%;                        /* Ancho de la tabla. */
+    font-family: 'Dosis', sans-serif;  /* Especifica la fuente de la tabla, en este caso, 'Dosis'. */
+    width: 80%;                        /* Ancho de la tabla, que es el 80% del contenedor en el que está. */
     border-collapse: separate;         /* Las celdas de la tabla tienen bordes separados. */
-    border-spacing: 0;                 /* Espacio entre bordes de celdas. */
-    margin: 20px auto;                 /* Margen de la tabla. */
-    font-size: 16px;                   /* Tamaño de fuente. */
-    text-align: left;                  /* Alineación del texto. */
-    border-radius: 10px;               /* Bordes redondeados. */
-    overflow: hidden;                  /* Oculta contenido desbordado. */
-    border: 1px solid #ffffff;         /* Borde blanco para toda la tabla. */
-}
-
-/* Agregando bordes blancos a los encabezados y celdas de la tabla */
-th, td {
-    border: 1px solid #ffffff;         /* Borde blanco. */
+    border-spacing: 0;                 /* Espacio entre los bordes de las celdas. */
+    margin: 20px auto;                 /* Margen superior e inferior de 20px y centrado horizontalmente. */
+    font-size: 16px;                   /* Tamaño de fuente de la tabla. */
+    text-align: left;                  /* Alineación del texto a la izquierda. */
+    border-radius: 10px;               /* Bordes redondeados para toda la tabla. */
+    overflow: hidden;                  /* Cualquier contenido que se desborde del borde de la tabla se oculta. */
 }
 
 /* Estilos para el encabezado de la tabla */
@@ -175,7 +169,7 @@ td a i {
     margin-right: 8px;                /* Espacio a la derecha de los íconos. */
     vertical-align: middle;           /* Alinea verticalmente el ícono con el texto del enlace. */
     color: #f37521;                   /* Color naranja para los íconos. */
-    font-size: 25px;                  /* Tamaño de fuente para los íconos. */
+    font-size: 18px;                  /* Tamaño de fuente para los íconos. */
 }
 
 /* Cambia el color del ícono a blanco al pasar el ratón por encima */
