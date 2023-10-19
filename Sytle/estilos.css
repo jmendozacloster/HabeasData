@@ -110,64 +110,72 @@ h1 {
 
 /* Estilos generales de la tabla */
 table {
-    font-family: 'Dosis', sans-serif;
-    width: 80%;                   /* Cambia el ancho de la tabla */
-    border-collapse: collapse; 
-    margin: 20px auto;            /* Centra la tabla y agrega margen superior e inferior */
-    font-size: 16px;
-    text-align: left;
+    font-family: 'Dosis', sans-serif;  /* Especifica la fuente de la tabla, en este caso, 'Dosis'. */
+    width: 80%;                        /* Ancho de la tabla, que es el 80% del contenedor en el que está. */
+    border-collapse: separate;         /* Las celdas de la tabla tienen bordes separados. */
+    border-spacing: 0;                 /* Espacio entre los bordes de las celdas. */
+    margin: 20px auto;                 /* Margen superior e inferior de 20px y centrado horizontalmente. */
+    font-size: 16px;                   /* Tamaño de fuente de la tabla. */
+    text-align: left;                  /* Alineación del texto a la izquierda. */
+    border-radius: 10px;               /* Bordes redondeados para toda la tabla. */
+    overflow: hidden;                  /* Cualquier contenido que se desborde del borde de la tabla se oculta. */
 }
 
 /* Estilos para el encabezado de la tabla */
 th {
-    font-family: 'Dosis', sans-serif;
-    background-color: #f37521; /* Color de fondo naranja */
-    color: #ffffff;            /* Texto blanco */
-    padding: 10px;
+    font-family: 'Dosis', sans-serif;  /* Fuente específica para los encabezados de la tabla. */
+    background-color: #f37521;        /* Color de fondo naranja para los encabezados. */
+    color: #ffffff;                   /* Color de texto blanco para los encabezados. */
+    padding: 10px;                    /* Espaciado interno de 10px para los encabezados. */
 }
 
 /* Estilos para las filas */
 tr {
-    font-family: 'Dosis', sans-serif;
-    border-bottom: 1px solid #000000; /* Línea de separación entre filas */
+    font-family: 'Dosis', sans-serif;  /* Fuente específica para las filas de la tabla. */
+    border-bottom: 1px solid #ffffff;  /* Línea de separación blanca entre filas. */
 }
 
 /* Estilos para las celdas */
 td {
-    padding: 8px 10px;             /* Espaciado interno */
+    padding: 8px 10px;                 /* Espaciado interno para las celdas. */
+    border: 1px solid #ffffff;        /* Borde blanco alrededor de las celdas. */
 }
 
 /* Estilo para las filas al pasar el ratón por encima */
 tr:hover {
-    background-color: #ffffff;   /* Color de fondo gris claro */
+    background-color: #ffffff;        /* Color de fondo blanco al pasar el ratón sobre una fila. */
 }
 
 /* Estilos para los enlaces dentro de la tabla */
 td a {
-    text-decoration: none;       /* Remover el subrayado */
-    margin-right: 10px;          /* Espaciado entre enlaces */
-    padding: 5px 10px;           /* Relleno */
-    color: #f37521;              /* Color naranja */
-    border: 1px solid #f37521;   /* Borde naranja */
-    border-radius: 5px;          /* Esquinas redondeadas */
-    font-size: 14px;             /* Tamaño de letra */
+    text-decoration: none;            /* Sin subrayado en los enlaces. */
+    margin: 0 5px;                    /* Espacio horizontal entre enlaces. */
+    padding: 5px 10px;                /* Relleno alrededor de los enlaces. */
+    color: #f37521;                   /* Color de texto naranja para enlaces. */
+    border: 1px solid #f37521;        /* Borde naranja alrededor de enlaces. */
+    border-radius: 5px;               /* Esquinas redondeadas para enlaces. */
+    font-size: 14px;                  /* Tamaño de fuente para enlaces. */
+    display: inline-block;            /* Los enlaces se comportan como bloques en línea. */
 }
 
 /* Efecto al pasar el ratón por encima de los enlaces */
 td a:hover {
-    background-color: #f37521;   /* Fondo naranja */
-    color: #ffffff;              /* Texto blanco */
+    background-color: #f37521;        /* Color de fondo naranja al pasar el ratón sobre un enlace. */
+    color: #ffffff;                   /* Color de texto blanco al pasar el ratón sobre un enlace. */
 }
 
 /* Estilos para los íconos dentro de los enlaces */
 td a i {
-    margin-right: 8px;           /* Espaciado entre el ícono y el texto del enlace */
-    vertical-align: middle;      /* Alinea verticalmente el ícono con el texto */
-    color: #f37521;
-    align-items: center;
+    margin-right: 8px;                /* Espacio a la derecha de los íconos. */
+    vertical-align: middle;           /* Alinea verticalmente el ícono con el texto del enlace. */
+    color: #f37521;                   /* Color naranja para los íconos. */
+    font-size: 18px;                  /* Tamaño de fuente para los íconos. */
 }
 
-
+/* Cambia el color del ícono a blanco al pasar el ratón por encima */
+td a:hover i {
+    color: #ffffff;                   /* Color de texto blanco para el ícono al pasar el ratón sobre un enlace. */
+}
 
 
 
