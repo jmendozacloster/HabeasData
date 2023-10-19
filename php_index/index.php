@@ -53,7 +53,7 @@
             <thead>
                 <!-- Columnas de la tabla -->
                 <!-- <th>#</th> -->
-                <th>Nombre</th>
+                <th>NOMBRE</th>
                 <th>Cedula</th>
                 <th>Ciudad de expedición</th>
                 <th>Acción</th>
