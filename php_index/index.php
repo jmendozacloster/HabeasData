@@ -49,6 +49,7 @@
 
     <?php if (count($data)) : ?>
         <!-- Tabla para mostrar los documentos firmados -->
+        <table border="1">
             <thead>
                 <!-- Columnas de la tabla -->
                 <!-- <th>#</th> -->
