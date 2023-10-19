@@ -110,6 +110,7 @@ h1 {
 
 /* Estilos generales de la tabla */
 table {
+    font-family: 'Dosis', sans-serif;
     width: 80%;                   /* Cambia el ancho de la tabla */
     border-collapse: collapse; 
     margin: 20px auto;            /* Centra la tabla y agrega margen superior e inferior */
@@ -119,6 +120,7 @@ table {
 
 /* Estilos para el encabezado de la tabla */
 th {
+    font-family: 'Dosis', sans-serif;
     background-color: #f37521; /* Color de fondo naranja */
     color: #ffffff;            /* Texto blanco */
     padding: 10px;
@@ -126,7 +128,8 @@ th {
 
 /* Estilos para las filas */
 tr {
-    border-bottom: 1px solid #ffffff; /* Línea de separación entre filas */
+    font-family: 'Dosis', sans-serif;
+    border-bottom: 1px solid #000000; /* Línea de separación entre filas */
 }
 
 /* Estilos para las celdas */
@@ -158,8 +161,10 @@ td a:hover {
 
 /* Estilos para los íconos dentro de los enlaces */
 td a i {
-    margin-right: 5px;           /* Espaciado entre el ícono y el texto del enlace */
+    margin-right: 8px;           /* Espaciado entre el ícono y el texto del enlace */
     vertical-align: middle;      /* Alinea verticalmente el ícono con el texto */
+    color: #ffffff;
+    align-items: center;
 }
 
 
