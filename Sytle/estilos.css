@@ -144,10 +144,14 @@ tr {
 }
 
 /* Estilos para las celdas */
+
 td {
-    padding: 8px 10px;                 /* Espaciado interno para las celdas. */
-    border: 1px solid #ffffff;        /* Borde blanco alrededor de las celdas. */
+    padding: 8px 10px;                 
+    border: 1px solid #ffffff;        
+    text-align: center;               /* Centra el contenido horizontalmente. */
+    vertical-align: middle;           /* Centra el contenido verticalmente. */
 }
+
 
 td a:not(:last-child) {
     margin-right: 20px;  /* Espacio a la derecha de cada enlace, excepto el último. */
