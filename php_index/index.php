@@ -63,9 +63,9 @@
                     <td><?php echo $d->origen_cedula; ?></td>
             <!-- Enlace para ver y descargar el PDF -->
             <td>
-                <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank"><i class="fas fa-eye"></i> Ver PDF</a>
-                <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank" download><i class="fas fa-download"></i> Descargar PDF</a>
-                <a href="../php/eliminar.php?id=<?php echo $d->id; ?>"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank"><i class="fas fa-eye"></i>❌ Ver PDF</a>
+                <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank" download><i class="fas fa-download"></i>🥱 Descargar PDF</a>
+                <a href="../php/eliminar.php?id=<?php echo $d->id; ?>"><i class="fas fa-trash-alt"></i>😎 Eliminar</a>
             </td>
                 </tr>
             <?php endforeach; ?>
