@@ -52,7 +52,7 @@ h1 {
     flex-direction: column; /* Organiza los hijos en una columna */
     justify-content: center; /* Centra los hijos verticalmente */
     align-items: center;    /* Centra los hijos horizontalmente */
-    height: 1vh;          /* Usa el 100% del alto de la ventana del navegador */
+    height: 3vh;          /* Usa el 100% del alto de la ventana del navegador */
     text-align: center;     /* Asegura que el texto esté centrado */
 }
   
@@ -149,7 +149,7 @@ td {
 }
 
 td a:not(:last-child) {
-    margin-right: 15px;  /* Espacio a la derecha de cada enlace, excepto el último. */
+    margin-right: 20px;  /* Espacio a la derecha de cada enlace, excepto el último. */
 }
 
 /* Estilo para las filas al pasar el ratón por encima */
