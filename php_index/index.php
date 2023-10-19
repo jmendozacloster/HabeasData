@@ -5,19 +5,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Habeas Data | Closter Pharma</title>
+
+    <link rel="stylesheet" href="Sytle/estilos.css">
+</head>
 </head>
 
 <body>
     <!-- Encabezado de la página -->
+
+    <header>
+        <img src="img/encabezado.jpg" alt="Logo de Closter Pharma">
+    </header>
+    <h2>Bienvenido a</h2>
     <h1>Dashboard Habeas Data</h1>
     <!-- Enlace para crear una nueva firma -->
-    <div><a href="../php/newsign.php">Nueva Firma</a></div>
+    <div class="button-container">
+    <a href="./newsign.php" class="new-sign-button">
+        <span class="logo">📝</span> <!-- Este es un emoji de ejemplo para el logo, puedes reemplazarlo con tu ícono preferido -->
+        Nueva Firma
+    </a>
+</div>
     <!-- Título para la sección de documentos firmados -->
-    <h3>Ver Documentos Firmados</h3>
+    <h3 class="documents-title">Ver Documentos Firmados</h3>
+
+
+
+
+
 
     <?php
     // Incluir el archivo de conexión a la base de datos
-    include "../db/connect.db.php";
+    include "connect.db.php";
     // Consulta SQL para obtener datos ordenados por fecha de creación descendente
     $sql = "SELECT * FROM person order by created_at desc";
     //$conn = connect_db();
@@ -37,20 +55,20 @@
                 <!-- Columnas de la tabla -->
                 <!-- <th>#</th> -->
                 <th>Nombre</th>
-                <th>Cedula</th>
-                <th>de Ciudad</th>
+                <th>Telefono</th>
+                <th>Email</th>
                 <th>Acción</th>
             </thead>
             <?php foreach ($data as $d) : ?>
                 <tr>
                     <td><?php echo $d->name; ?></td>
-                    <td><?php echo $d->cedula; ?></td>
-                    <td><?php echo $d->origen_cedula; ?></td>
+                    <td><?php echo $d->phone; ?></td>
+                    <td><?php echo $d->email; ?></td>
                     <!-- Enlace para ver y descargar el PDF -->
                     <td>
-                        <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank">Ver PDF</a>
-                        <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank" download>Descargar PDF</a>
-                        <a href="../php/eliminar.php?id=<?php echo $d->id; ?>">Eliminar</a>
+                        <a href="./PDFS/<?php echo $d->name; ?>.pdf" target="_blank">Ver PDF</a>
+                        <a href="./PDFS/<?php echo $d->name; ?>.pdf" target="_blank" download>Descargar PDF</a>
+                        <a href="./eliminar.php?id=<?php echo $d->id; ?>">Eliminar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -59,6 +77,13 @@
         <!-- Mostrar mensaje si no hay documentos firmados -->
         <p>No hay documentos firmados.</p>
     <?php endif; ?>
+
+    <footer>
+    <div class="line"></div>
+          <div class="text2">
+            <small>&copy; 2023 <b>Closter Pharma</b> | Dashboard Habeas Data.</small>
+        </div>
+    </footer>
 
 </body>
 

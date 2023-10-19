@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap'); /* Importa la fuente Roboto, que es una fuente sans-serif moderna */
+
+/* Restablece márgenes y rellenos por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cuerpo de la pagina */
+body {
+    font-size: 10px;
+    background-color: #eceaea;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el body ocupe al menos el alto total de la ventana del navegador */
+}
+
+/*Encabezado de la página */
+header {
+    text-align: center;
+}
+
+header img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción original de la imagen */
+}
+
+
+/*Titulo 1 */
+h2{
+    font-family: 'Dosis', sans-serif;
+    font-size: 20px; /* Aumenta un poco el tamaño del texto para darle más presencia */
+    display: flex;          /* Usa Flexbox */
+    flex-direction: column; /* Organiza los hijos en una columna */
+    justify-content: center; /* Centra los hijos verticalmente */
+    align-items: center;    /* Centra los hijos horizontalmente */
+    height: 5vh;          /* Usa el 100% del alto de la ventana del navegador */
+    text-align: center;     /* Asegura que el texto esté centrado */
+}
+/*Titulo 2 */
+h1 {
+    font-family: 'Dosis', sans-serif; /* Utiliza la fuente Roboto */
+    font-size: 35px; /* Aumenta un poco el tamaño del texto para darle más presencia */
+    margin-bottom: 20px;
+    color: #000000; /* Cambia el color del texto a blanco para que contraste con el fondo degradado */
+    padding: 10px 20px; /* Añade relleno alrededor del título para que el fondo degradado sea más visible */
+    display: inline-block; /* Hace que el fondo degradado solo rodee el texto, y no toda la línea */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.527); /* Agrega una sombra de texto para darle profundidad */
+    border-radius: 10px; /* Suaviza las esquinas del fondo degradado */
+    display: flex;          /* Usa Flexbox */
+    flex-direction: column; /* Organiza los hijos en una columna */
+    justify-content: center; /* Centra los hijos verticalmente */
+    align-items: center;    /* Centra los hijos horizontalmente */
+    height: 1vh;          /* Usa el 100% del alto de la ventana del navegador */
+    text-align: center;     /* Asegura que el texto esté centrado */
+}
+  
+
+
+/* Estilos generales para el contenido y el boton */
+.button-container, .documents-title {
+    display: flex;
+    justify-content: flex-start;  /* Alinear horizontalmente a la izquierda */
+    align-items: flex-start;      /* Alinear verticalmente arriba */
+    margin-left: 10px;            /* Margen izquierdo */
+    margin-top: 5px;              /* Margen superior */
+    margin-bottom: 18px;          /* Margen inferior */
+}
+
+/* Estilos del boton */
+.new-sign-button {
+    font-family: 'Dosis', sans-serif;
+    font-size: 15px;
+    background-color: #f06b12;          /* Color de fondo rojo */
+    color: #ffffff;                     /* Color negro para el texto */
+    padding: 10px 20px;                 /* Relleno */
+    border-radius: 5px;                 /* Esquinas redondeadas */
+    text-decoration: none;              /* Remover subrayado del enlace */
+    font-weight: bold;                  /* Texto en negrita */
+    display: flex;                      /* Para centrar el logo y el texto en el botón */
+    align-items: center;                /* Centrar verticalmente el logo y el texto */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave de colores */
+    box-shadow: 0px 4px 8px rgb(219, 121, 28); /* Sombra */
+}
+
+.new-sign-button:hover {
+    background-color: #e78708;          /* Color de fondo más oscuro al pasar el mouse */
+}
+
+.new-sign-button:active {
+    background-color: #e78708;          /* Color de fondo aún más oscuro al hacer clic */
+    color: #000000;                     /* Color blanco para el texto al hacer clic */
+}
+
+/* Estilos del logo del boton*/
+.logo {
+    margin-right: 10px;                /* Espacio a la derecha del logo */
+    font-size: 25px;                   /* Tamaño del logo (ajustar según el logo utilizado) */
+}
+
+
+/* Titulo 3 */
+.documents-title {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;                 /* Título en negrita */
+    font-size: 24px;                  /* Tamaño del texto */
+}
+
+
+
+/* Estilos del Footer o pie de pagina */
+  footer {
+    font-family: 'Dosis', sans-serif;
+    margin-top: auto; /* Empuja el footer hacia la parte inferior si hay espacio disponible */
+    padding: 10px 0; /* Relleno superior e inferior */
+    color: #000000; /* Color blanco para el texto */
+}
+
+.line {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: 2px; /* Altura de la línea */
+    background-color: #b3a4a4; /* Color rojo para la línea */
+    margin-bottom: 10px; /* Espacio entre la línea y el texto */
+}
+
+.text2 {
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+.text2 small {
+    font-size: 14px; /* Ajusta el tamaño del texto */
+}
+
+.text2 b {
+    color: #000000; /* Color rojo para el texto en negrita */
+}
