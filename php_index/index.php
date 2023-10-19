@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Habeas Data | Closter Pharma</title>
 
-    <link rel="stylesheet" href="Sytle/estilos.css">
+    <link rel="stylesheet" href="../Sytle/estilos.css">
 </head>
 </head>
 
@@ -14,13 +14,13 @@
     <!-- Encabezado de la página -->
 
     <header>
-        <img src="img/encabezado.jpg" alt="Logo de Closter Pharma">
+        <img src="../img/encabezado.jpg" alt="Logo de Closter Pharma">
     </header>
     <h2>Bienvenido a</h2>
     <h1>Dashboard Habeas Data</h1>
     <!-- Enlace para crear una nueva firma -->
     <div class="button-container">
-    <a href="./newsign.php" class="new-sign-button">
+    <a href="../php/newsign.php" class="new-sign-button">
         <span class="logo">📝</span> <!-- Este es un emoji de ejemplo para el logo, puedes reemplazarlo con tu ícono preferido -->
         Nueva Firma
     </a>
@@ -35,7 +35,7 @@
 
     <?php
     // Incluir el archivo de conexión a la base de datos
-    include "connect.db.php";
+    include "../db/connect.db.php";
     // Consulta SQL para obtener datos ordenados por fecha de creación descendente
     $sql = "SELECT * FROM person order by created_at desc";
     //$conn = connect_db();
@@ -66,9 +66,9 @@
                     <td><?php echo $d->email; ?></td>
                     <!-- Enlace para ver y descargar el PDF -->
                     <td>
-                        <a href="./PDFS/<?php echo $d->name; ?>.pdf" target="_blank">Ver PDF</a>
-                        <a href="./PDFS/<?php echo $d->name; ?>.pdf" target="_blank" download>Descargar PDF</a>
-                        <a href="./eliminar.php?id=<?php echo $d->id; ?>">Eliminar</a>
+                        <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank">Ver PDF</a>
+                        <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank" download>Descargar PDF</a>
+                        <a href="../php/eliminar.php?id=<?php echo $d->id; ?>">Eliminar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
