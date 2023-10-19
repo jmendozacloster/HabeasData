@@ -108,6 +108,55 @@ h1 {
 }
 
 
+/* Estilos generales de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Elimina los espacios entre las celdas */
+    margin: 20px 0;            /* Margen superior e inferior */
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Estilos para el encabezado de la tabla */
+th {
+    background-color: #f37521; /* Color de fondo naranja */
+    color: #ffffff;            /* Texto blanco */
+    padding: 10px;
+}
+
+/* Estilos para las filas */
+tr {
+    border-bottom: 1px solid #ddd; /* Línea de separación entre filas */
+}
+
+/* Estilos para las celdas */
+td {
+    padding: 8px 10px;             /* Espaciado interno */
+}
+
+/* Estilo para las filas al pasar el ratón por encima */
+tr:hover {
+    background-color: #f5f5f5;   /* Color de fondo gris claro */
+}
+
+/* Estilos para los enlaces dentro de la tabla */
+td a {
+    text-decoration: none;       /* Remover el subrayado */
+    margin-right: 10px;          /* Espaciado entre enlaces */
+    padding: 5px 10px;           /* Relleno */
+    color: #f37521;              /* Color naranja */
+    border: 1px solid #f37521;   /* Borde naranja */
+    border-radius: 5px;          /* Esquinas redondeadas */
+    font-size: 14px;             /* Tamaño de letra */
+}
+
+/* Efecto al pasar el ratón por encima de los enlaces */
+td a:hover {
+    background-color: #f37521;   /* Fondo naranja */
+    color: #ffffff;              /* Texto blanco */
+}
+
+
 
 /* Estilos del Footer o pie de pagina */
   footer {

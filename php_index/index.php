@@ -28,11 +28,6 @@
     <!-- Título para la sección de documentos firmados -->
     <h3 class="documents-title">Ver Documentos Firmados</h3>
 
-
-
-
-
-
     <?php
     // Incluir el archivo de conexión a la base de datos
     include "../db/connect.db.php";
