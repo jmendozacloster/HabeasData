@@ -12,7 +12,7 @@ session_start();
 $pdf = new FPDF($orientation='P');
 
 // Incluir el archivo de conexión a la base de datos
-include "connect.db.php";
+include "../db/connect.db.php";
 
 // Obtener datos del usuario usando el ID proporcionado en la URL
 $sql = "SELECT * FROM person WHERE id=" . $_GET['id'];
@@ -122,4 +122,3 @@ $buffer = ob_end_flush();
 // Mostrar mensaje de éxito y contenido del búfer
 echo "PDF generado con éxito";
 echo "Contenido del buffer: <pre>", htmlspecialchars($buffer), "</pre>";
-?>

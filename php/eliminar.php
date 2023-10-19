@@ -1,6 +1,6 @@
 <?php
 // Incluir el archivo de conexión a la base de datos
-include "connect.db.php";
+include "../db/connect.db.php";
 
 // Obtener el ID del registro a eliminar desde los parámetros GET
 $idToDelete = $_GET['id'];
@@ -20,7 +20,7 @@ if ($query_select) {
 
     // Eliminar la firma del directorio ./firmas/
     if (!empty($firmaFileName)) {
-        $firmaFilePath = "./firmas/" . $firmaFileName;
+        $firmaFilePath = "../firmas/" . $firmaFileName;
         if (file_exists($firmaFilePath)) {
             unlink($firmaFilePath);
         }
@@ -30,7 +30,7 @@ if ($query_select) {
     $pdfFileName = $row['name'] . '.pdf';
 
     // Eliminar el PDF del directorio ./PDFS/
-    $pdfFilePath = "./PDFS/" . $pdfFileName;
+    $pdfFilePath = "../PDFS/" . $pdfFileName;
     if (file_exists($pdfFilePath)) {
         unlink($pdfFilePath);
     }
@@ -45,7 +45,7 @@ if ($query_select) {
     // Verificar si la eliminación fue exitosa
     if ($query_delete) {
         // Redirigir a la página de inicio después de eliminar el registro
-        header("Location: ./index.php");
+        header("Location: ../php_index/index.php");
     } else {
         // Mostrar un mensaje de error si la eliminación falló
         echo "Error al intentar eliminar el registro.";
@@ -54,4 +54,3 @@ if ($query_select) {
     // Mostrar un mensaje de error si la consulta para obtener datos falló
     echo "Error al intentar obtener datos del registro.";
 }
-?>

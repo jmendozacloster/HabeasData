@@ -1,5 +1,5 @@
 <?php
-include "connect.db.php";
+include "../db/connect.db.php";
 
 // Obtener el ID de $_GET
 $id = isset($_GET['id']) ? $_GET['id'] : null;

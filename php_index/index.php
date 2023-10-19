@@ -11,13 +11,13 @@
     <!-- Encabezado de la página -->
     <h1>Dashboard Habeas Data</h1>
     <!-- Enlace para crear una nueva firma -->
-    <div><a href="./newsign.php">Nueva Firma</a></div>
+    <div><a href="../php/newsign.php">Nueva Firma</a></div>
     <!-- Título para la sección de documentos firmados -->
     <h3>Ver Documentos Firmados</h3>
 
     <?php
     // Incluir el archivo de conexión a la base de datos
-    include "connect.db.php";
+    include "../db/connect.db.php";
     // Consulta SQL para obtener datos ordenados por fecha de creación descendente
     $sql = "SELECT * FROM person order by created_at desc";
     //$conn = connect_db();
@@ -37,20 +37,20 @@
                 <!-- Columnas de la tabla -->
                 <!-- <th>#</th> -->
                 <th>Nombre</th>
-                <th>Telefono</th>
-                <th>Email</th>
+                <th>Cedula</th>
+                <th>de Ciudad</th>
                 <th>Acción</th>
             </thead>
             <?php foreach ($data as $d) : ?>
                 <tr>
                     <td><?php echo $d->name; ?></td>
-                    <td><?php echo $d->phone; ?></td>
-                    <td><?php echo $d->email; ?></td>
+                    <td><?php echo $d->cedula; ?></td>
+                    <td><?php echo $d->origen_cedula; ?></td>
                     <!-- Enlace para ver y descargar el PDF -->
                     <td>
-                        <a href="./PDFS/<?php echo $d->name; ?>.pdf" target="_blank">Ver PDF</a>
-                        <a href="./PDFS/<?php echo $d->name; ?>.pdf" target="_blank" download>Descargar PDF</a>
-                        <a href="./eliminar.php?id=<?php echo $d->id; ?>">Eliminar</a>
+                        <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank">Ver PDF</a>
+                        <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank" download>Descargar PDF</a>
+                        <a href="../php/eliminar.php?id=<?php echo $d->id; ?>">Eliminar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

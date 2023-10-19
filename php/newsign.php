@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Closter Pharma S.A.S</title>
-  <script src="jquery.min.js"></script>
-  <script src="signature_pad.js"></script>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/signature_pad.js"></script>
   <style>
     body {
       border: 1px solid #ddd;
@@ -16,6 +16,10 @@
       text-align: justify;
       line-height: 1.6;
       color: #333;
+      border-radius: 10px;
+      /* Agregado: Esquinas curvas */
+      transition: border 0.3s ease-in-out;
+      /* Agregado: Transición de borde */
     }
 
     h1 {
@@ -48,7 +52,15 @@
     }
 
     canvas {
+      width: 640px;
+      height: 200px;
       border: 1px solid #333;
+      border-radius: 10px;
+      /* Agregado: Esquinas curvas */
+      transition: border 0.3s ease-in-out;
+      /* Agregado: Transición de borde */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+      /* Sombreado en todos los lados */
     }
 
     .btn {
@@ -59,6 +71,8 @@
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+      /* Sombreado en todos los lados */
     }
 
     .btn:hover {
@@ -132,9 +146,9 @@
     Autorización de Tratamiento de Datos a Closter Pharma S.A.S
   </div>
 
-  <!-- Elemento para mostrar la fecha
+  <!-- Elemento para mostrar la fecha -->
   <div id="current-date"></div>
-
+  <!--
    Texto de Habeas Data
   <div id="habeas-data-text">
     <p>
@@ -146,9 +160,9 @@
   </div> -->
 
   <!-- Formulario que recoge los datos y los envía al servidor -->
-  <form id="form" action="./savedraw.php" method="post">
+  <form id="form" action="../php/savedraw.php" method="post" onsubmit="return validateForm()">
     <p>
-      Yo, <input type="text" name="name" placeholder="Nombre Completo">, identificado con cedula de ciudadania N° <input type="text" name="cedula" placeholder="cedula">
+      Yo, <input type="text" name="name" placeholder="Nombre Completo">, identificado con cedula de ciudadania N°, <input type="int" name="cedula" placeholder="cedula">
       de <input type="text" name="origen_cedula" placeholder="ciudad">, por medio del presente documento, doy mi autorización a ustedes Closter Pharma S.A.S,
       para que los datos registrados en mi hoja de vida sean utilizados.
     </p>
@@ -170,6 +184,38 @@
   </form>
   <!-- Botón para limpiar la firma -->
   <button id="clearSignature" class="btn btn-warning">Limpiar Firma</button>
+
+
+  <script>
+    function validateForm() {
+      var name = document.querySelector('input[name="name"]').value;
+      var cedula = document.querySelector('input[name="cedula"]').value;
+      var origenCedula = document.querySelector('input[name="origen_cedula"]').value;
+
+      // Validación de nombre (solo letras y espacios)
+      var nameRegex = /^[a-zA-Z\s]+$/;
+      if (!nameRegex.test(name)) {
+        alert('Por favor, ingrese un nombre válido, no se aceptan caracteres especiales.');
+        return false;
+      }
+
+      // Validación de cédula (solo números)
+      var cedulaRegex = /^\d+$/;
+      if (!cedulaRegex.test(cedula)) {
+        alert('Por favor, ingrese una cédula válida. Debe contener solo números.');
+        return false;
+      }
+
+      // Validación de ciudad (solo letras y espacios)
+      var ciudadRegex = /^[a-zA-Z\s]+$/;
+      if (!ciudadRegex.test(origenCedula)) {
+        alert('Por favor, ingrese una ciudad válida.');
+        return false;
+      }
+      return true;
+    }
+  </script>
+
   <script>
     // Obtener el botón de limpiar firma
     var clearButton = document.getElementById('clearSignature');
@@ -197,7 +243,7 @@
     var year = currentDate.getFullYear();
 
     // Construir la cadena de fecha en el formato deseado
-    var formattedDate = "Bogotá, " + day + " de " + monthNames[monthIndex] + " del " + year;
+    var formattedDate = "Bogotá D.C, " + day + " de " + monthNames[monthIndex] + " del " + year;
 
     // Mostrar la fecha en el elemento correspondiente
     document.getElementById("current-date").innerHTML = formattedDate;

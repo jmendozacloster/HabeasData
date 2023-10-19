@@ -4,7 +4,7 @@ $img = $_POST['base64'];
 $img = str_replace('data:image/png;base64,', '', $img);
 $fileData = base64_decode($img);
 $fileName = uniqid() . '.png';
-file_put_contents("./firmas/" . $fileName, $fileData);
+file_put_contents("../firmas/" . $fileName, $fileData);
 
 // Obtener datos del formulario
 $name = $_POST["name"];
@@ -12,7 +12,7 @@ $cedula = $_POST["cedula"];
 $origen_cedula = $_POST["origen_cedula"];
 
 // Conectar a la base de datos
-include "connect.db.php";
+include "../db/connect.db.php";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 // Insertar datos en la base de datos
@@ -27,7 +27,7 @@ if (!$resultInsert) {
 // Crear PDF con los datos del formulario
 ob_start();
 //setlocale(LC_CTYPE, 'es_MX');
-include "fpdf/fpdf.php";
+include "../fpdf/fpdf.php";
 session_start();
 
 // Crear una instancia de FPDF
@@ -48,7 +48,7 @@ $pdf->AddPage();
 $pdf->SetFont('Arial', 'B', 16);
 
 // Agregar logo al PDF
-$pdf->Image('Logos/LOGO CLOSTER versiones-04.png', 10, 10, 30);
+$pdf->Image('../Logos/LOGO CLOSTER versiones-04.png', 10, 10, 30);
 
 // Configurar encabezado del documento
 $pdf->setY(2);
@@ -104,7 +104,7 @@ $pdf->Cell(5, 0, utf8_decode('FIRMADO EL DÍA: ' . $data->created_at->format('Y-
 
 // Agregar la imagen de firma al PDF
 if ($data->firma != "") {
-    $pdf->Image('firmas/' . $data->firma, 40, 155, 48, 27);
+    $pdf->Image('../firmas/' . $data->firma, 40, 155, 48, 27);
 }
 
 // Agregar línea para la firma manual del usuario
@@ -113,7 +113,7 @@ $pdf->setX(10);
 $pdf->Cell(5, 0, 'FIRMA __________________________________________.');
 
 // Generar el archivo PDF y obtener su contenido
-$pdfFilePath = './PDFS/' . $data->name . '.pdf';
+$pdfFilePath = '../PDFS/' . $data->name . '.pdf';
 $pdf->output($pdfFilePath);
 $pdfContent = mb_convert_encoding($pdf->Output('', 'S'), 'UTF-8');
 
@@ -137,4 +137,4 @@ $buffer = ob_end_flush();
 echo "PDF generado con éxito";
 echo "Contenido del buffer: <pre>", htmlspecialchars($buffer), "</pre>";
 // Redirigir a la página de inicio después de completar las operaciones
-header("Location: ./index.php");
+header("Location: ../php/newsign.php");
