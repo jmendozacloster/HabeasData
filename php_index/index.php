@@ -50,15 +50,15 @@
                 <!-- Columnas de la tabla -->
                 <!-- <th>#</th> -->
                 <th>Nombre</th>
-                <th>Telefono</th>
-                <th>Email</th>
+                <th>Cedula</th>
+                <th>de Ciudad</th>
                 <th>Acción</th>
             </thead>
             <?php foreach ($data as $d) : ?>
                 <tr>
                     <td><?php echo $d->name; ?></td>
-                    <td><?php echo $d->phone; ?></td>
-                    <td><?php echo $d->email; ?></td>
+                    <td><?php echo $d->cedula; ?></td>
+                    <td><?php echo $d->origen_cedula; ?></td>
                     <!-- Enlace para ver y descargar el PDF -->
                     <td>
                         <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank">Ver PDF</a>
