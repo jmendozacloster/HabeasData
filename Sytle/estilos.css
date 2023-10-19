@@ -125,6 +125,7 @@ table {
 /* Agregando bordes blancos a los encabezados y celdas de la tabla */
 th, td {
     border: 1px solid #dbcfcf;         /* Borde blanco. */
+    align-items: center;
 }
 
 
