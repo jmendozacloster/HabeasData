@@ -124,7 +124,7 @@ table {
 
 /* Agregando bordes blancos a los encabezados y celdas de la tabla */
 th, td {
-    border: 1px solid #ffffff;         /* Borde blanco. */
+    border: 1px solid #dbcfcf;         /* Borde blanco. */
 }
 
 
@@ -146,6 +146,10 @@ tr {
 td {
     padding: 8px 10px;                 /* Espaciado interno para las celdas. */
     border: 1px solid #ffffff;        /* Borde blanco alrededor de las celdas. */
+}
+
+td a:not(:last-child) {
+    margin-right: 15px;  /* Espacio a la derecha de cada enlace, excepto el último. */
 }
 
 /* Estilo para las filas al pasar el ratón por encima */
@@ -176,7 +180,7 @@ td a i {
     margin-right: 8px;                /* Espacio a la derecha de los íconos. */
     vertical-align: middle;           /* Alinea verticalmente el ícono con el texto del enlace. */
     color: #f37521;                   /* Color naranja para los íconos. */
-    font-size: 18px;                  /* Tamaño de fuente para los íconos. */
+    font-size: 25px;                  /* Tamaño de fuente para los íconos. */
 }
 
 /* Cambia el color del ícono a blanco al pasar el ratón por encima */
