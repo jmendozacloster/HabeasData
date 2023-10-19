@@ -54,9 +54,9 @@
                 <!-- Columnas de la tabla -->
                 <!-- <th>#</th> -->
                 <th>NOMBRE</th>
-                <th>Cedula</th>
-                <th>Ciudad de expedición</th>
-                <th>Acción</th>
+                <th>CEDULA</th>
+                <th>CIUDAD DE EXPEDICION</th>
+                <th>ACCION</th>
             </thead>
             <?php foreach ($data as $d) : ?>
                 <tr>
