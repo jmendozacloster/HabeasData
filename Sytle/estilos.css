@@ -163,7 +163,7 @@ td a:hover {
 td a i {
     margin-right: 8px;           /* Espaciado entre el ícono y el texto del enlace */
     vertical-align: middle;      /* Alinea verticalmente el ícono con el texto */
-    color: #ffffff;
+    color: #f37521;
     align-items: center;
 }
 
