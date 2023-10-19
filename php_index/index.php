@@ -7,6 +7,8 @@
     <title>Habeas Data | Closter Pharma</title>
 
     <link rel="stylesheet" href="../Sytle/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 </head>
 
@@ -51,7 +53,7 @@
                 <!-- <th>#</th> -->
                 <th>Nombre</th>
                 <th>Cedula</th>
-                <th>de Ciudad</th>
+                <th>Ciudad de expedición</th>
                 <th>Acción</th>
             </thead>
             <?php foreach ($data as $d) : ?>
@@ -59,12 +61,12 @@
                     <td><?php echo $d->name; ?></td>
                     <td><?php echo $d->cedula; ?></td>
                     <td><?php echo $d->origen_cedula; ?></td>
-                    <!-- Enlace para ver y descargar el PDF -->
-                    <td>
-                        <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank">Ver PDF</a>
-                        <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank" download>Descargar PDF</a>
-                        <a href="../php/eliminar.php?id=<?php echo $d->id; ?>">Eliminar</a>
-                    </td>
+            <!-- Enlace para ver y descargar el PDF -->
+            <td>
+                <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank"><i class="fas fa-eye"></i> Ver PDF</a>
+                <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank" download><i class="fas fa-download"></i> Descargar PDF</a>
+                <a href="../php/eliminar.php?id=<?php echo $d->id; ?>"><i class="fas fa-trash-alt"></i> Eliminar</a>
+            </td>
                 </tr>
             <?php endforeach; ?>
         </table>
@@ -76,7 +78,7 @@
     <footer>
     <div class="line"></div>
           <div class="text2">
-            <small>&copy; 2023 <b>Closter Pharma</b> | Dashboard Habeas Data.</small>
+            <small>&copy; 2023 <b>Closter Pharma</b> |Area IT |Dashboard Habeas Data.</small>
         </div>
     </footer>
 

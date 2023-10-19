@@ -110,9 +110,9 @@ h1 {
 
 /* Estilos generales de la tabla */
 table {
-    width: 100%;
-    border-collapse: collapse; /* Elimina los espacios entre las celdas */
-    margin: 20px 0;            /* Margen superior e inferior */
+    width: 80%;                   /* Cambia el ancho de la tabla */
+    border-collapse: collapse; 
+    margin: 20px auto;            /* Centra la tabla y agrega margen superior e inferior */
     font-size: 16px;
     text-align: left;
 }
@@ -126,7 +126,7 @@ th {
 
 /* Estilos para las filas */
 tr {
-    border-bottom: 1px solid #ddd; /* Línea de separación entre filas */
+    border-bottom: 1px solid #ffffff; /* Línea de separación entre filas */
 }
 
 /* Estilos para las celdas */
@@ -136,7 +136,7 @@ td {
 
 /* Estilo para las filas al pasar el ratón por encima */
 tr:hover {
-    background-color: #f5f5f5;   /* Color de fondo gris claro */
+    background-color: #ffffff;   /* Color de fondo gris claro */
 }
 
 /* Estilos para los enlaces dentro de la tabla */
@@ -155,6 +155,14 @@ td a:hover {
     background-color: #f37521;   /* Fondo naranja */
     color: #ffffff;              /* Texto blanco */
 }
+
+/* Estilos para los íconos dentro de los enlaces */
+td a i {
+    margin-right: 5px;           /* Espaciado entre el ícono y el texto del enlace */
+    vertical-align: middle;      /* Alinea verticalmente el ícono con el texto */
+}
+
+
 
 
 /* Estilos del Footer o pie de pagina */
