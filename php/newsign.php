@@ -12,7 +12,7 @@
 </head>
     <!-- Encabezado de la página -->
     <header>
-        <img src="img/encabezado.jpg" alt="Logo de Closter Pharma">
+        <img src="../img/encabezado.jpg" alt="Logo de Closter Pharma">
     </header>
 
 <body>
