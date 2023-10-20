@@ -172,7 +172,7 @@
 <footer>
     <div class="line"></div>
           <div class="text2">
-            <small>&copy; 2023 <b>Closter Pharma</b> | Dashboard Habeas Data.</small>
+            <small>&copy; 2023 <b>Closter Pharma</b> | Area IT  | Dashboard Habeas Data.</small>
         </div>
     </footer>
 </body>
