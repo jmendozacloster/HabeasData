@@ -63,7 +63,7 @@ h1 {
     display: flex;
     justify-content: flex-start;  /* Alinear horizontalmente a la izquierda */
     align-items: flex-start;      /* Alinear verticalmente arriba */
-    margin-left: 10px;            /* Margen izquierdo */
+    margin-left: -1750px;            /* Margen izquierdo */
     margin-top: 5px;              /* Margen superior */
     margin-bottom: 18px;          /* Margen inferior */
 }
