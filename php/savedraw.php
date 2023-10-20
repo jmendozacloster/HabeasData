@@ -69,7 +69,7 @@ $pdf->setX(10);
 $pdf->Cell(5, 76, 'BIENVENIDO/A:');
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 86, utf8_decode('A fin de evitar errores de transcripción y conocer mejor sus necesidades, le'));
+$pdf->Cell(5, 86, utf8_decode('Yo, '.$data->name.' , identificado con cedula de ciudadania N°, '.$data->cedula));
 $pdf->setY(2);
 $pdf->setX(10);
 $pdf->Cell(5, 96, utf8_decode('rogamos que rellene este formulario para la inclusión de sus datos personales en'));
