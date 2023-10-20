@@ -69,35 +69,36 @@ $pdf->setX(10);
 $pdf->Cell(5, 76, 'BIENVENIDO/A:');
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 86, utf8_decode('Yo, '.$data->name.' , identificado con cedula de ciudadania N°, '.$data->cedula));
+$pdf->Cell(5, 86, utf8_decode('Yo, '.$data->name.' , identificado con cedula de ciudadania N°, '.$data->cedula, 'de'.$data->$origen_cedula.));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 96, utf8_decode('rogamos que rellene este formulario para la inclusión de sus datos personales en'));
+$pdf->Cell(5, 96, utf8_decode('por medio del presente documento, doy mi autorización a ustedes Closter Pharma S.A.S, para que los datos registrados'));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 106, utf8_decode('nuestro fichero de pacientes (por favor escriba en mayúsculas).'));
+$pdf->Cell(5, 106, utf8_decode('en mi hoja de vida sean utilizados.'));
+
+
+$pdf->SetFont('Arial', 'B', 12);
+$pdf->setY(2);
+$pdf->setX(10);
+$pdf->Cell(5, 86, utf8_decode('Todo esto para dar cumplimiento a lo citado en la Ley 1581 de 2012 (Ley de Protección de Datos Personales, siendo consciente de)'));
+$pdf->setY(2);
+$pdf->setX(10);
+$pdf->Cell(5, 96, utf8_decode('que mis datos serán conservados dentro de sus bases de datos y su uso será única y exclusivamente para procesos de selección.'));
+$pdf->setY(2);
+
 
 // Agregar datos personales al PDF
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 25, utf8_decode('NOMBRE COMPLETO: ' . $data->name));
+$pdf->Cell(5, 130 + 25, utf8_decode('Datos Adicionales: '));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 45, utf8_decode('TELEFONO: ' . $data->phone));
+$pdf->Cell(5, 130 + 45, utf8_decode('CELULAR: ' . $data->phone));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 65, utf8_decode('CORREO ELECTRÓNICO: ' . $data->email));
+$pdf->Cell(5, 130 + 65, utf8_decode('E-MAIL: ' . $data->email));
 
-// Agregar sección de consentimiento al PDF
-$pdf->setY(2);
-$pdf->setX(10);
-$pdf->Cell(5, 130 + 110, utf8_decode('Acepto que CLOSTER PHARMA S.A.S. trate mis datos de carácter personal para el'));
-$pdf->setY(2);
-$pdf->setX(10);
-$pdf->Cell(5, 130 + 120, utf8_decode('tratamiento de mis datos de salud. Asimismo, doy el consentimiento para que me puedan'));
-$pdf->setY(2);
-$pdf->setX(10);
-$pdf->Cell(5, 130 + 130, utf8_decode('informar sobre productos y servicios de la empresa que puedan ser de mi interés.'));
 
 // Agregar la fecha de firma al PDF
 $pdf->setY(140);
