@@ -245,6 +245,7 @@ td a:hover i {
     border-radius: 5px;
     font-size: 15px;
     font-weight: bold;
+    width: 40px; /* Cambia el valor a tu preferencia de ancho */
 }
 
 .form-input {
@@ -255,6 +256,7 @@ td a:hover i {
     border-radius: 5px;
     font-size: 15px;
     font-weight: bold;
+    width: 40px; /* Cambia el valor a tu preferencia de ancho */
 }
 
 #signature-pad {

@@ -44,7 +44,7 @@
   <!-- Formulario que recoge los datos y los envía al servidor -->
   <form id="form" action="../php/savedraw.php" method="post" onsubmit="return validateForm()">
     <p>
-      Yo, <input type="text" name="name" placeholder="Nombre Completo">, identificado con cedula de ciudadania N°, <input type="int" name="cedula" placeholder="Cedula">
+      Yo, <input type="text" name="name" placeholder="Nombres y Apellidos">, identificado con cedula de ciudadania N°, <input type="int" name="cedula" placeholder="Cedula">
       de <input type="text" name="origen_cedula" placeholder="Ciudad">, por medio del presente documento, doy mi autorización a ustedes Closter Pharma S.A.S,
       para que los datos registrados en mi hoja de vida sean utilizados.
     </p>
@@ -55,7 +55,7 @@
     <p>
       Datos adicionales: <br>
       <br>
-      Telefono: <input type="int" class="form-input" name="telefono" placeholder="Telefono"> <br>
+      Celular: <input type="int" class="form-input" name="telefono" placeholder="Celular"> <br>
       Email: <input type="text" class="form-input" name="email" placeholder="Correo Electronico">
     </p>
     <input type="hidden" name="pacient_id" value="0">
