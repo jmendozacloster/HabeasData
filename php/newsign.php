@@ -68,11 +68,11 @@
         <canvas style="width: 640px; height: 200px; border: 1px black solid; " id="canvas"></canvas>
       </div>
     </div>
-    <div class="button-container">
+    <div class="button-container1">
     <button id="saveandfinish" class="btn btn-success">Guardar y Autorizar</button>
-      <!-- Botón para limpiar la firma -->
-  <button id="clearSignature" class="btn btn-warning">Limpiar Firma</button>
-  </div>
+    <!-- Botón para limpiar la firma -->
+    <button id="clearSignature" class="btn btn-warning">Limpiar Firma</button>
+</div>
   </form>
   </div>
 

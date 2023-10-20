@@ -20,11 +20,11 @@
     <header>
         <img src="../img/encabezado.jpg" alt="Logo de Closter Pharma">
     </header>
-    <h2>Bienvenido a:</h2>
+    <h2>Bienvenido a</h2>
     <h1>Dashboard Habeas Data</h1>
     <!-- Enlace para crear una nueva firma -->
     <div class="button-container">
-    <a href="../php/newsign.php" class="new-sign-button">
+    <a href="./newsign.php" class="new-sign-button">
         <span class="logo">📝</span> <!-- Este es un emoji de ejemplo para el logo, puedes reemplazarlo con tu ícono preferido -->
         Nueva Firma
     </a>
