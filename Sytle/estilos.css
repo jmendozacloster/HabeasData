@@ -111,7 +111,7 @@ h1 {
 /* Estilos generales de la tabla */
 table {
     font-family: 'Dosis', sans-serif;  /* Especifica la fuente de la tabla. */
-    width: 80%;                        /* Ancho de la tabla. */
+    width: 90%;                        /* Ancho de la tabla. */
     border-collapse: separate;         /* Las celdas de la tabla tienen bordes separados. */
     border-spacing: 0;                 /* Espacio entre bordes de celdas. */
     margin: 20px auto;                 /* Margen de la tabla. */
@@ -145,7 +145,7 @@ tr {
 
 /* Estilos para las celdas */
 td {
-    padding: 8px 10px;                 /* Espaciado interno para las celdas. */
+    padding: 8px 5px;                 /* Espaciado interno para las celdas. */
     border: 1px solid #ffffff;        /* Borde blanco alrededor de las celdas. */
 }
 
