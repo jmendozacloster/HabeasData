@@ -10,14 +10,16 @@ file_put_contents("../firmas/" . $fileName, $fileData);
 $name = $_POST["name"];
 $cedula = $_POST["cedula"];
 $origen_cedula = $_POST["origen_cedula"];
+$telefono = $_POST["telefono"];
+$email = $_POST["email"];
 
 // Conectar a la base de datos
 include "../db/connect.db.php";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 // Insertar datos en la base de datos
-$sqlInsert = "INSERT INTO person (name, firma, created_at, cedula, origen_cedula) VALUES (?, ?, GETDATE(), ?, ?)";
-$resultInsert = sqlsrv_query($conn, $sqlInsert, array($name, $fileName, $cedula, $origen_cedula));
+$sqlInsert = "INSERT INTO person (name, firma, created_at, cedula, origen_cedula, phone, email) VALUES (?, ?, GETDATE(), ?, ?, ?, ?)";
+$resultInsert = sqlsrv_query($conn, $sqlInsert, array($name, $fileName, $cedula, $origen_cedula, $telefono, $email));
 
 // Verificar el resultado de la inserción
 if (!$resultInsert) {

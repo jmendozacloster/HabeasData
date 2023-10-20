@@ -55,8 +55,8 @@
     <p>
       Datos adicionales: <br>
       <br>
-      Telefono: <input type="text" class="form-input" name="name" placeholder="Telefono"> <br>
-      Email: <input type="text" class="form-input" name="name" placeholder="Correo Electronico">
+      Telefono: <input type="int" class="form-input" name="telefono" placeholder="Telefono"> <br>
+      Email: <input type="text" class="form-input" name="email" placeholder="Correo Electronico">
     </p>
     <input type="hidden" name="pacient_id" value="0">
     <input type="hidden" name="base64" value="" id="base64">

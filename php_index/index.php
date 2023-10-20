@@ -24,7 +24,7 @@
     <h1>Dashboard Habeas Data</h1>
     <!-- Enlace para crear una nueva firma -->
     <div class="button-container">
-    <a href="./newsign.php" class="new-sign-button">
+    <a href="../php/newsign.php" class="new-sign-button">
         <span class="logo">📝</span> <!-- Este es un emoji de ejemplo para el logo, puedes reemplazarlo con tu ícono preferido -->
         Nueva Firma
     </a>
@@ -56,6 +56,8 @@
                 <th>NOMBRE</th>
                 <th>CEDULA</th>
                 <th>CIUDAD DE EXPEDICION</th>
+                <th>CELULAR</th>
+                <th>CORREO</th>
                 <th>ACCION</th>
             </thead>
             <?php foreach ($data as $d) : ?>
@@ -63,6 +65,8 @@
                     <td><?php echo $d->name; ?></td>
                     <td><?php echo $d->cedula; ?></td>
                     <td><?php echo $d->origen_cedula; ?></td>
+                    <td><?php echo $d->phone; ?></td>
+                    <td><?php echo $d->email; ?></td>
             <!-- Enlace para ver y descargar el PDF -->
             <td class="centered-content">
                 <a href="../PDFS/<?php echo $d->name; ?>.pdf" target="_blank"><i class="fas fa-eye"></i> Ver PDF</a>
