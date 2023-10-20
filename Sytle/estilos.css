@@ -149,10 +149,13 @@ td {
     border: 1px solid #ffffff;        /* Borde blanco alrededor de las celdas. */
 }
 
+.centered-content {
+    text-align: center;
+    vertical-align: middle;
+}
+
 td a:not(:last-child) {
     margin-right: 20px;  /* Espacio a la derecha de cada enlace, excepto el último. */
-    text-align: center;               /* Centra el contenido horizontalmente. */
-    vertical-align: middle;           /* Centra el contenido verticalmente. */
 }
 
 /* Estilo para las filas al pasar el ratón por encima */
