@@ -4,148 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Closter Pharma S.A.S</title>
+  <link rel="stylesheet" href="../Sytle/estilos.css">
+
   <script src="../js/jquery.min.js"></script>
   <script src="../js/signature_pad.js"></script>
-  <style>
-    body {
-      border: 1px solid #ddd;
-      padding: 20px;
-      margin: 10px auto;
-      max-width: 800px;
-      font-family: 'Arial', sans-serif;
-      text-align: justify;
-      line-height: 1.6;
-      color: #333;
-      border-radius: 10px;
-      /* Agregado: Esquinas curvas */
-      transition: border 0.3s ease-in-out;
-      /* Agregado: Transición de borde */
-    }
 
-    h1 {
-      text-align: center;
-      color: #007BFF;
-    }
-
-    #habeas-data-title {
-      font-size: 24px;
-      font-weight: bold;
-      margin-top: 20px;
-      color: #007BFF;
-    }
-
-    #habeas-data-text {
-      margin-top: 20px;
-    }
-
-    #habeas-data-text p {
-      margin-bottom: 15px;
-    }
-
-    #form {
-      margin-top: 20px;
-    }
-
-    #signature-pad {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    canvas {
-      width: 640px;
-      height: 200px;
-      border: 1px solid #333;
-      border-radius: 10px;
-      /* Agregado: Esquinas curvas */
-      transition: border 0.3s ease-in-out;
-      /* Agregado: Transición de borde */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-      /* Sombreado en todos los lados */
-    }
-
-    .btn {
-      margin-top: 20px;
-      background-color: #28A745;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-      /* Sombreado en todos los lados */
-    }
-
-    .btn:hover {
-      background-color: #218838;
-    }
-
-    a {
-      color: #007BFF;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    #saveandfinish {
-      background-color: #ffa500;
-      /* Color de fondo verde */
-      color: white;
-      /* Color del texto blanco */
-      padding: 10px 20px;
-      /* Espaciado interno del botón */
-      font-size: 16px;
-      /* Tamaño del texto */
-      border: none;
-      /* Sin borde */
-      border-radius: 5px;
-      /* Esquinas redondeadas */
-      cursor: pointer;
-      /* Cursor de puntero al pasar el ratón */
-      display: block;
-      margin: 20px auto;
-      /* Ajusta el margen según sea necesario */
-    }
-
-    #saveandfinish:hover {
-      background-color: #45a049;
-      /* Cambia el color de fondo al pasar el ratón */
-    }
-
-    #clearSignature {
-      background-color: #ffa500;
-      /* Color de fondo verde */
-      color: white;
-      /* Color del texto blanco */
-      padding: 10px 20px;
-      /* Espaciado interno del botón */
-      font-size: 16px;
-      /* Tamaño del texto */
-      border: none;
-      /* Sin borde */
-      border-radius: 5px;
-      /* Esquinas redondeadas */
-      cursor: pointer;
-      /* Cursor de puntero al pasar el ratón */
-      display: block;
-      margin: 20px auto;
-      /* Ajusta el margen según sea necesario */
-    }
-
-    #clearSignature:hover {
-      background-color: #45a049;
-      /* Cambia el color de fondo al pasar el ratón */
-    }
-  </style>
 </head>
+    <!-- Encabezado de la página -->
+    <header>
+        <img src="img/encabezado.jpg" alt="Logo de Closter Pharma">
+    </header>
 
 <body>
+
+  <div class="container">
   <!-- Título de Autorización de Tratamiento de Datos -->
   <div id="habeas-data-title">
     Autorización de Tratamiento de Datos a Closter Pharma S.A.S
   </div>
 
+<br>
+<br>
+<br>
+<br>
   <!-- Elemento para mostrar la fecha -->
   <div id="current-date"></div>
   <!--
@@ -158,33 +39,42 @@
       Closter Pharma S.A.S
     </p>
   </div> -->
-
+  <br>
+<br>
   <!-- Formulario que recoge los datos y los envía al servidor -->
   <form id="form" action="../php/savedraw.php" method="post" onsubmit="return validateForm()">
     <p>
-      Yo, <input type="text" name="name" placeholder="Nombre Completo">, identificado con cedula de ciudadania N°, <input type="int" name="cedula" placeholder="cedula">
-      de <input type="text" name="origen_cedula" placeholder="ciudad">, por medio del presente documento, doy mi autorización a ustedes Closter Pharma S.A.S,
+      Yo, <input type="text" name="name" placeholder="Nombre Completo">, identificado con cedula de ciudadania N°, <input type="int" name="cedula" placeholder="Cedula">
+      de <input type="text" name="origen_cedula" placeholder="Ciudad">, por medio del presente documento, doy mi autorización a ustedes Closter Pharma S.A.S,
       para que los datos registrados en mi hoja de vida sean utilizados.
     </p>
     <p>
       Todo esto para dar cumplimiento a lo citado en la Ley 1581 de 2012 (Ley de Protección de Datos Personales), siendo consciente de que mis datos serán
       conservados dentro de sus bases de datos y su uso será única y exclusivamente para procesos de selección.
     </p>
+    <p>
+      Datos adicionales: <br>
+      <br>
+      Telefono: <input type="text" class="form-input" name="name" placeholder="Telefono"> <br>
+      Email: <input type="text" class="form-input" name="name" placeholder="Correo Electronico">
+    </p>
     <input type="hidden" name="pacient_id" value="0">
     <input type="hidden" name="base64" value="" id="base64">
 
     <!-- Contenedor y Elemento Canvas para la firma -->
     <div id="signature-pad" class="signature-pad">
-      <div class="description">Firmar aquí</div>
+      <div class="description">Firmar aquí:</div>
       <div class="signature-pad--body">
         <canvas style="width: 640px; height: 200px; border: 1px black solid; " id="canvas"></canvas>
       </div>
     </div>
+    <div class="button-container">
     <button id="saveandfinish" class="btn btn-success">Guardar y Autorizar</button>
-  </form>
-  <!-- Botón para limpiar la firma -->
+      <!-- Botón para limpiar la firma -->
   <button id="clearSignature" class="btn btn-warning">Limpiar Firma</button>
-
+  </div>
+  </form>
+  </div>
 
   <script>
     function validateForm() {
@@ -278,6 +168,13 @@
       document.getElementById('base64').value = image;
     }, false);
   </script>
+
+<footer>
+    <div class="line"></div>
+          <div class="text2">
+            <small>&copy; 2023 <b>Closter Pharma</b> | Dashboard Habeas Data.</small>
+        </div>
+    </footer>
 </body>
 
 </html>

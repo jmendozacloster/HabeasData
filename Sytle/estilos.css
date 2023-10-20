@@ -52,7 +52,7 @@ h1 {
     flex-direction: column; /* Organiza los hijos en una columna */
     justify-content: center; /* Centra los hijos verticalmente */
     align-items: center;    /* Centra los hijos horizontalmente */
-    height: 3vh;          /* Usa el 100% del alto de la ventana del navegador */
+    height: 1vh;          /* Usa el 100% del alto de la ventana del navegador */
     text-align: center;     /* Asegura que el texto esté centrado */
 }
   
@@ -108,92 +108,113 @@ h1 {
 }
 
 
-/* Estilos generales de la tabla */
-table {
-    font-family: 'Dosis', sans-serif;  /* Especifica la fuente de la tabla. */
-    width: 80%;                        /* Ancho de la tabla. */
-    border-collapse: separate;         /* Las celdas de la tabla tienen bordes separados. */
-    border-spacing: 0;                 /* Espacio entre bordes de celdas. */
-    margin: 20px auto;                 /* Margen de la tabla. */
-    font-size: 16px;                   /* Tamaño de fuente. */
-    text-align: left;                  /* Alineación del texto. */
-    border-radius: 10px;               /* Bordes redondeados. */
-    overflow: hidden;                  /* Oculta contenido desbordado. */
-    border: 1px solid #ffffff;         /* Borde blanco para toda la tabla. */
+/* Estilos para el contenedor formulario */
+.container {
+    border: 1px solid #beb9b9; /* Borde de 2 píxeles sólido, puedes ajustar el ancho y el color según tus preferencias */
+    padding: 20px; /* Espacio dentro del borde */
+    border-radius: 10px; /* Bordes redondeados */
+    max-width: 1000px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centrar el contenedor horizontalmente */
+
+}
+  
+#habeas-data-title {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold; /* Negrilla */
+    color: black; /* Color negro */
+    font-size: 25px;
+    text-align: center; /* Texto centrado */
 }
 
-/* Agregando bordes blancos a los encabezados y celdas de la tabla */
-th, td {
-    border: 1px solid #dbcfcf;         /* Borde blanco. */
-    align-items: center;
+#current-date {
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold; /* Texto en negrilla */
+    color: #000; /* Color negro */
+    text-align: left; /* Alineado a la izquierda */
+    font-size: 13px;
 }
 
-
-/* Estilos para el encabezado de la tabla */
-th {
-    font-family: 'Dosis', sans-serif;  /* Fuente específica para los encabezados de la tabla. */
-    background-color: #f37521;        /* Color de fondo naranja para los encabezados. */
-    color: #ffffff;                   /* Color de texto blanco para los encabezados. */
-    padding: 10px;                    /* Espaciado interno de 10px para los encabezados. */
+#form {
+    font-family: 'Dosis', sans-serif; /* Fuente personalizada */
+    color: #333; /* Color del texto */
+    line-height: 1.6; /* Espaciado entre líneas */
+    font-size: 15px;
+    font-weight: bold;
 }
 
-/* Estilos para las filas */
-tr {
-    font-family: 'Dosis', sans-serif;  /* Fuente específica para las filas de la tabla. */
-    border-bottom: 1px solid #ffffff;  /* Línea de separación blanca entre filas. */
+#form p {
+    font-family: 'Dosis', sans-serif; /* Fuente personalizada */
+    margin-bottom: 15px; /* Espacio entre párrafos */
+    font-size: 15px;
+    font-weight: bold;
 }
 
-/* Estilos para las celdas */
-td {
-    padding: 8px 10px;                 /* Espaciado interno para las celdas. */
-    border: 1px solid #ffffff;        /* Borde blanco alrededor de las celdas. */
+#form p input {
+    font-family: 'Dosis', sans-serif; /* Fuente personalizada */
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
-.centered-content {
-    text-align: center;
-    vertical-align: middle;
+.form-input {
+    font-family: 'Dosis', sans-serif; /* Fuente personalizada */
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
 }
 
-td a:not(:last-child) {
-    margin-right: 20px;  /* Espacio a la derecha de cada enlace, excepto el último. */
+#signature-pad {
+    text-align: center; /* Centra el contenido horizontalmente */
+    font-family: 'Dosis', sans-serif; /* Fuente personalizada */
 }
 
-/* Estilo para las filas al pasar el ratón por encima */
-tr:hover {
-    background-color: #ffffff;        /* Color de fondo blanco al pasar el ratón sobre una fila. */
+.description {
+    font-weight: bold; /* Texto en negrita */
+    margin-bottom: 10px; /* Espacio inferior */
+    color: #000000; /* Color de texto */
+    font-size: 15px;
 }
 
-/* Estilos para los enlaces dentro de la tabla */
-td a {
-    text-decoration: none;            /* Sin subrayado en los enlaces. */
-    margin: 0 5px;                    /* Espacio horizontal entre enlaces. */
-    padding: 5px 10px;                /* Relleno alrededor de los enlaces. */
-    color: #f37521;                   /* Color de texto naranja para enlaces. */
-    border: 1px solid #f37521;        /* Borde naranja alrededor de enlaces. */
-    border-radius: 5px;               /* Esquinas redondeadas para enlaces. */
-    font-size: 14px;                  /* Tamaño de fuente para enlaces. */
-    display: inline-block;            /* Los enlaces se comportan como bloques en línea. */
+#canvas {
+    width: 640px;
+    height: 200px;
+    border: 1px solid #c1b4b4;
+    border-radius: 10px;
+    transition: border 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgb(213, 206, 206);
+    margin: 0 auto; /* Centra el canvas horizontalmente */
 }
 
-/* Efecto al pasar el ratón por encima de los enlaces */
-td a:hover {
-    background-color: #f37521;        /* Color de fondo naranja al pasar el ratón sobre un enlace. */
-    color: #ffffff;                   /* Color de texto blanco al pasar el ratón sobre un enlace. */
-}
-
-/* Estilos para los íconos dentro de los enlaces */
-td a i {
-    margin-right: 8px;                /* Espacio a la derecha de los íconos. */
-    vertical-align: middle;           /* Alinea verticalmente el ícono con el texto del enlace. */
-    color: #f37521;                   /* Color naranja para los íconos. */
-    font-size: 25px;                  /* Tamaño de fuente para los íconos. */
-}
-
-/* Cambia el color del ícono a blanco al pasar el ratón por encima */
-td a:hover i {
-    color: #ffffff;                   /* Color de texto blanco para el ícono al pasar el ratón sobre un enlace. */
-}
-
+.button-container {
+    display: flex; /* Muestra los botones en línea horizontal */
+    justify-content: center; /* Centra horizontalmente los botones */
+    margin-top: 20px; /* Espacio superior */
+  }
+  
+  #saveandfinish, #clearSignature {
+    font-family: 'Dosis', sans-serif; /* Fuente personalizada */
+    font-weight: bold; /* Texto en negrita */
+    background-color: #f06b12; /* Color de fondo */
+    color: white; /* Color de texto */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cursor de puntero */
+    margin: 0 10px; /* Espacio entre los botones */
+  }
+  
+  #saveandfinish:hover, #clearSignature:hover {
+    background-color: #e78708; /* Cambia el color de fondo al pasar el ratón */
+  }
+  
+  
 
 
 /* Estilos del Footer o pie de pagina */
@@ -222,3 +243,16 @@ td a:hover i {
 .text2 b {
     color: #000000; /* Color rojo para el texto en negrita */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
