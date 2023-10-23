@@ -52,7 +52,7 @@ $pdf->SetFont('Arial', 'B', 16);
 // Agregar logo al PDF
 // $pdf->Image('../Logos/LOGO CLOSTER versiones-04.png', 10, 10, 30);
 // Ancho del logo
-$logoWidth = 30;
+$logoWidth = 50;
 
 // Calcular la posición x para centrar el logo
 $x = ($pdf->w - $logoWidth) / 2;
@@ -73,7 +73,7 @@ $pdf->setX(10);
 $pdf->Cell(5, 56, 'AUTORIZACION DE TRATAMIENTO DE DATOS DE CLOSTER PHARMA S.A.S');
 
 // Agregar espacio adicional
-$spacing = 10;  // Establece la cantidad de espacio que deseas entre los párrafos.
+$spacing = 15;  // Establece la cantidad de espacio que deseas entre los párrafos.
 $currentY = $pdf->getY();  // Obtiene la posición Y actual después del primer párrafo.
 $pdf->setY($currentY + $spacing);  // Establece la nueva posición Y, que es la posición actual más el espacio deseado.
 
@@ -81,6 +81,10 @@ $pdf->SetFont('Arial', 'B', 12);
 $pdf->setY(2);
 $pdf->setX(10);
 $pdf->Cell(5, 76, 'BIENVENIDO/A:');
+// Agregar espacio adicional
+$spacing = 10;  // Establece la cantidad de espacio que deseas entre los párrafos.
+$currentY = $pdf->getY();  // Obtiene la posición Y actual después del primer párrafo.
+$pdf->setY($currentY + $spacing);  // Establece la nueva posición Y, que es la posición actual más el espacio deseado.
 $pdf->setY(2);
 $pdf->setX(10);
 $pdf->Cell(5, 86, utf8_decode('Yo, '.$data->name. ' ,identificado con cedula de ciudadania N°, '. $data->cedula . ' ,de '. $data->origen_cedula));
@@ -91,7 +95,10 @@ $pdf->setY(2);
 $pdf->setX(10);
 $pdf->Cell(5, 106, utf8_decode('para que los datos registrados en mi hoja de vida sean utilizados.'));
 
-  
+// Agregar espacio adicional
+$spacing = 30;  // Establece la cantidad de espacio que deseas entre los párrafos.
+$currentY = $pdf->getY();  // Obtiene la posición Y actual después del primer párrafo.
+$pdf->setY($currentY + $spacing);  // Establece la nueva posición Y, que es la posición actual más el espacio deseado.  
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->setY(2);
 $pdf->setX(10);
