@@ -45,6 +45,17 @@ while ($r = sqlsrv_fetch_object($querySelect)) {
     $data = $r;
 }
 
+
+// Crear una instancia de FPDF
+$pdf = new FPDF($orientation = 'P');
+
+// Ajustar los márgenes: 20 unidades a la izquierda, 10 en la parte superior y 20 a la derecha
+$pdf->SetMargins(20, 10, 20);
+
+// Configurar la primera página del PDF
+$pdf->AddPage();
+
+
 // Configurar la primera página del PDF
 $pdf->AddPage();
 $pdf->SetFont('Arial', 'B', 16);
@@ -132,7 +143,7 @@ if ($data->firma != "") {
 }
 
 // Agregar línea para la firma manual del usuario
-$pdf->setY(180);
+$pdf->setY(200);
 $pdf->setX(10);
 $pdf->Cell(5, 0, 'FIRMA __________________________________________.');
 
