@@ -67,10 +67,15 @@ $pdf->Image('../Logos/LOGO CLOSTER versiones-04.png', $x, 10, $logoWidth);
 // $pdf->SetFont('Arial', 'B', 20);
 // $pdf->Cell(5, 20, strtoupper("Closter Pharma"));
 
-$pdf->SetFont('Arial', 'B', 18);
+$pdf->SetFont('Arial', 'B', 15);
 $pdf->setY(2);
 $pdf->setX(10);
 $pdf->Cell(5, 56, 'AUTORIZACION DE TRATAMIENTO DE DATOS DE CLOSTER PHARMA S.A.S');
+
+// Agregar espacio adicional
+$spacing = 10;  // Establece la cantidad de espacio que deseas entre los párrafos.
+$currentY = $pdf->getY();  // Obtiene la posición Y actual después del primer párrafo.
+$pdf->setY($currentY + $spacing);  // Establece la nueva posición Y, que es la posición actual más el espacio deseado.
 
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->setY(2);
