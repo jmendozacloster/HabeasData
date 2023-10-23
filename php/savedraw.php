@@ -50,18 +50,27 @@ $pdf->AddPage();
 $pdf->SetFont('Arial', 'B', 16);
 
 // Agregar logo al PDF
-$pdf->Image('../Logos/LOGO CLOSTER versiones-04.png', 10, 10, 30);
+// $pdf->Image('../Logos/LOGO CLOSTER versiones-04.png', 10, 10, 30);
+// Ancho del logo
+$logoWidth = 30;
 
-// Configurar encabezado del documento
+// Calcular la posición x para centrar el logo
+$x = ($pdf->w - $logoWidth) / 2;
+
+// Agregar el logo centrado al PDF
+$pdf->Image('../Logos/LOGO CLOSTER versiones-04.png', $x, 10, $logoWidth);
+
+
+// // Configurar encabezado del documento
+// $pdf->setY(2);
+// $pdf->setX(10);
+// $pdf->SetFont('Arial', 'B', 20);
+// $pdf->Cell(5, 20, strtoupper("Closter Pharma"));
+
+$pdf->SetFont('Arial', 'B', 18);
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->SetFont('Arial', 'B', 20);
-$pdf->Cell(5, 20, strtoupper("Closter Pharma"));
-
-$pdf->SetFont('Arial', 'B', 14);
-$pdf->setY(2);
-$pdf->setX(10);
-$pdf->Cell(5, 56, 'DOCUMENTO DE CONCENTIMIENTO');
+$pdf->Cell(5, 56, 'AUTORIZACION DE TRATAMIENTO DE DATOS DE CLOSTER PHARMA S.A.S');
 
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->setY(2);
@@ -69,7 +78,7 @@ $pdf->setX(10);
 $pdf->Cell(5, 76, 'BIENVENIDO/A:');
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 86, utf8_decode('Yo, '.$data->name. ' ,identificado con cedula de ciudadania N°, '. $data->cedula . ' ,de'. $data->origen_cedula));
+$pdf->Cell(5, 86, utf8_decode('Yo, '.$data->name. ' ,identificado con cedula de ciudadania N°, '. $data->cedula . ' ,de '. $data->origen_cedula));
 $pdf->setY(2);
 $pdf->setX(10);
 $pdf->Cell(5, 96, utf8_decode('por medio del presente documento, doy mi autorización a ustedes Closter Pharma S.A.S,'));
