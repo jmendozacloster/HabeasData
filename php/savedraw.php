@@ -57,8 +57,12 @@ $logoWidth = 50;
 // Calcular la posición x para centrar el logo
 $x = ($pdf->w - $logoWidth) / 2;
 
+// Nuevo valor Y para mover el logo hacia arriba
+$y = 5;
+
 // Agregar el logo centrado al PDF
-$pdf->Image('../Logos/LOGO CLOSTER versiones-04.png', $x, 10, $logoWidth);
+$pdf->Image('../Logos/LOGO CLOSTER versiones-04.png', $x, $y, $logoWidth);
+
 
 
 // // Configurar encabezado del documento
@@ -67,7 +71,7 @@ $pdf->Image('../Logos/LOGO CLOSTER versiones-04.png', $x, 10, $logoWidth);
 // $pdf->SetFont('Arial', 'B', 20);
 // $pdf->Cell(5, 20, strtoupper("Closter Pharma"));
 
-$pdf->SetFont('Arial', 'B', 15);
+$pdf->SetFont('Arial', 'B', 13);
 $pdf->setY(2);
 $pdf->setX(10);
 $pdf->Cell(5, 56, 'AUTORIZACION DE TRATAMIENTO DE DATOS DE CLOSTER PHARMA S.A.S');
