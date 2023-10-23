@@ -58,7 +58,7 @@ $logoWidth = 50;
 $x = ($pdf->w - $logoWidth) / 2;
 
 // Nuevo valor Y para mover el logo hacia arriba
-$y = 5;
+$y = 2;
 
 // Agregar el logo centrado al PDF
 $pdf->Image('../Logos/LOGO CLOSTER versiones-04.png', $x, $y, $logoWidth);
@@ -74,57 +74,51 @@ $pdf->Image('../Logos/LOGO CLOSTER versiones-04.png', $x, $y, $logoWidth);
 $pdf->SetFont('Arial', 'B', 13);
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 56, 'AUTORIZACION DE TRATAMIENTO DE DATOS DE CLOSTER PHARMA S.A.S');
+$pdf->Cell(5, 76, 'AUTORIZACION DE TRATAMIENTO DE DATOS DE CLOSTER PHARMA S.A.S');
 
 // Agregar espacio adicional
-$spacing = 15;  // Establece la cantidad de espacio que deseas entre los párrafos.
+$spacing = 35;  // Establece la cantidad de espacio que deseas entre los párrafos.
 $currentY = $pdf->getY();  // Obtiene la posición Y actual después del primer párrafo.
 $pdf->setY($currentY + $spacing);  // Establece la nueva posición Y, que es la posición actual más el espacio deseado.
 
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 76, 'BIENVENIDO/A:');
-// Agregar espacio adicional
-$spacing = 10;  // Establece la cantidad de espacio que deseas entre los párrafos.
-$currentY = $pdf->getY();  // Obtiene la posición Y actual después del primer párrafo.
-$pdf->setY($currentY + $spacing);  // Establece la nueva posición Y, que es la posición actual más el espacio deseado.
-$pdf->setY(2);
-$pdf->setX(10);
-$pdf->Cell(5, 86, utf8_decode('Yo, '.$data->name. ' ,identificado con cedula de ciudadania N°, '. $data->cedula . ' ,de '. $data->origen_cedula));
-$pdf->setY(2);
-$pdf->setX(10);
-$pdf->Cell(5, 96, utf8_decode('por medio del presente documento, doy mi autorización a ustedes Closter Pharma S.A.S,'));
-$pdf->setY(2);
-$pdf->setX(10);
-$pdf->Cell(5, 106, utf8_decode('para que los datos registrados en mi hoja de vida sean utilizados.'));
+$pdf->Cell(5, 96, 'BIENVENIDO/A:');
 
-// Agregar espacio adicional
-$spacing = 30;  // Establece la cantidad de espacio que deseas entre los párrafos.
-$currentY = $pdf->getY();  // Obtiene la posición Y actual después del primer párrafo.
-$pdf->setY($currentY + $spacing);  // Establece la nueva posición Y, que es la posición actual más el espacio deseado.  
+$pdf->setY(2);
+$pdf->setX(10);
+$pdf->Cell(5, 116, utf8_decode('Yo, '.$data->name. ' ,identificado con cedula de ciudadania N°, '. $data->cedula . ' ,de '. $data->origen_cedula));
+$pdf->setY(2);
+$pdf->setX(10);
+$pdf->Cell(5, 126, utf8_decode('por medio del presente documento, doy mi autorización a ustedes Closter Pharma S.A.S,'));
+$pdf->setY(2);
+$pdf->setX(10);
+$pdf->Cell(5, 136, utf8_decode('para que los datos registrados en mi hoja de vida sean utilizados.'));
+
+
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 116, utf8_decode('Todo esto para dar cumplimiento a lo citado en la Ley 1581 de 2012 (Ley de Protección de'));
+$pdf->Cell(5, 146, utf8_decode('Todo esto para dar cumplimiento a lo citado en la Ley 1581 de 2012 (Ley de Protección de'));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 126, utf8_decode('Datos Personales), siendo consciente de que mis datos serán conservados dentro de sus'));
+$pdf->Cell(5, 156, utf8_decode('Datos Personales), siendo consciente de que mis datos serán conservados dentro de sus'));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 136, utf8_decode('bases de datos y su uso será única y exclusivamente para procesos de selección.'));
+$pdf->Cell(5, 166, utf8_decode('bases de datos y su uso será única y exclusivamente para procesos de selección.'));
 
 
 // Agregar datos personales al PDF
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 120, utf8_decode('Datos Adicionales: '));
+$pdf->Cell(5, 130 + 140, utf8_decode('Datos Adicionales: '));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 130, utf8_decode('CELULAR: ' . $data->phone));
+$pdf->Cell(5, 130 + 150, utf8_decode('CELULAR: ' . $data->phone));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 140, utf8_decode('E-MAIL: ' . $data->email));
+$pdf->Cell(5, 130 + 160, utf8_decode('E-MAIL: ' . $data->email));
 
 
 // Agregar la fecha de firma al PDF
