@@ -69,7 +69,7 @@ $pdf->setX(10);
 $pdf->Cell(5, 76, 'BIENVENIDO/A:');
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 86, utf8_decode('Yo, '.$data->name.' , identificado con cedula de ciudadania N°, '.$data->cedula, 'de'.$data->$origen_cedula.));
+$pdf->Cell(5, 86, utf8_decode('Yo, '.$data->name.' ,identificado con cedula de ciudadania N°, '.$data->cedula. ',de '.$data->$origen_cedula));
 $pdf->setY(2);
 $pdf->setX(10);
 $pdf->Cell(5, 96, utf8_decode('por medio del presente documento, doy mi autorización a ustedes Closter Pharma S.A.S, para que los datos registrados'));
@@ -81,23 +81,23 @@ $pdf->Cell(5, 106, utf8_decode('en mi hoja de vida sean utilizados.'));
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 86, utf8_decode('Todo esto para dar cumplimiento a lo citado en la Ley 1581 de 2012 (Ley de Protección de Datos Personales, siendo consciente de)'));
+$pdf->Cell(5, 90 + 90, utf8_decode('Todo esto para dar cumplimiento a lo citado en la Ley 1581 de 2012 (Ley de Protección de Datos Personales, siendo consciente de)'));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 96, utf8_decode('que mis datos serán conservados dentro de sus bases de datos y su uso será única y exclusivamente para procesos de selección.'));
+$pdf->Cell(5, 90 + 100, utf8_decode('que mis datos serán conservados dentro de sus bases de datos y su uso será única y exclusivamente para procesos de selección.'));
 $pdf->setY(2);
 
 
 // Agregar datos personales al PDF
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 25, utf8_decode('Datos Adicionales: '));
+$pdf->Cell(5, 130 + 110, utf8_decode('Datos Adicionales: '));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 45, utf8_decode('CELULAR: ' . $data->phone));
+$pdf->Cell(5, 130 + 120, utf8_decode('CELULAR: ' . $data->phone));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 65, utf8_decode('E-MAIL: ' . $data->email));
+$pdf->Cell(5, 130 + 130, utf8_decode('E-MAIL: ' . $data->email));
 
 
 // Agregar la fecha de firma al PDF
