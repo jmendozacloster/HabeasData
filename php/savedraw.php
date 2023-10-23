@@ -106,19 +106,19 @@ $pdf->setX(10);
 $pdf->Cell(5, 156, utf8_decode('Datos Personales), siendo consciente de que mis datos serán conservados dentro de sus'));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 166, utf8_decode('bases de datos y su uso será única y exclusivamente para procesos de selección.'));
+$pdf->Cell(5, 146, utf8_decode('bases de datos y su uso será única y exclusivamente para procesos de selección.'));
 
 
 // Agregar datos personales al PDF
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 140, utf8_decode('Datos Adicionales: '));
+$pdf->Cell(5, 130 + 120, utf8_decode('Datos Adicionales: '));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 150, utf8_decode('CELULAR: ' . $data->phone));
+$pdf->Cell(5, 130 + 130, utf8_decode('CELULAR: ' . $data->phone));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 160, utf8_decode('E-MAIL: ' . $data->email));
+$pdf->Cell(5, 130 + 140, utf8_decode('E-MAIL: ' . $data->email));
 
 
 // Agregar la fecha de firma al PDF
