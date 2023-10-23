@@ -77,7 +77,7 @@ $pdf->setY(2);
 $pdf->setX(10);
 $pdf->Cell(5, 106, utf8_decode('para que los datos registrados en mi hoja de vida sean utilizados.'));
 
-
+  
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->setY(2);
 $pdf->setX(10);
