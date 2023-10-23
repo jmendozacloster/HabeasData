@@ -100,13 +100,13 @@ $pdf->Cell(5, 136, utf8_decode('para que los datos registrados en mi hoja de vid
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 146, utf8_decode('Todo esto para dar cumplimiento a lo citado en la Ley 1581 de 2012 (Ley de Protección de'));
+$pdf->Cell(5, 166, utf8_decode('Todo esto para dar cumplimiento a lo citado en la Ley 1581 de 2012 (Ley de Protección de'));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 156, utf8_decode('Datos Personales), siendo consciente de que mis datos serán conservados dentro de sus'));
+$pdf->Cell(5, 176, utf8_decode('Datos Personales), siendo consciente de que mis datos serán conservados dentro de sus'));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 146, utf8_decode('bases de datos y su uso será única y exclusivamente para procesos de selección.'));
+$pdf->Cell(5, 186, utf8_decode('bases de datos y su uso será única y exclusivamente para procesos de selección.'));
 
 
 // Agregar datos personales al PDF
@@ -115,14 +115,14 @@ $pdf->setX(10);
 $pdf->Cell(5, 130 + 120, utf8_decode('Datos Adicionales: '));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 130, utf8_decode('CELULAR: ' . $data->phone));
+$pdf->Cell(5, 140 + 130, utf8_decode('CELULAR: ' . $data->phone));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 140, utf8_decode('E-MAIL: ' . $data->email));
+$pdf->Cell(5, 140 + 140, utf8_decode('E-MAIL: ' . $data->email));
 
 
 // Agregar la fecha de firma al PDF
-$pdf->setY(140);
+$pdf->setY(170);
 $pdf->setX(10);
 $pdf->Cell(5, 0, utf8_decode('FIRMADO EL DÍA: ' . $data->created_at->format('Y-m-d H:i:s')));
 
