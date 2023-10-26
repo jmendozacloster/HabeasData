@@ -10,7 +10,6 @@
   <script src="../js/signature_pad.js"></script>
 
 
-
 </head>
 <!-- Encabezado de la página -->
 <header>
@@ -82,14 +81,6 @@
       </div>
     </form>
   </div>
-
-  <div id="video-container">
-        <video id="video" autoplay></video>
-        <canvas id="canvas"></canvas>
-    </div>
-    <button id="capture-button">Tomar Foto</button>
-
-  
 
   <script>
     function validateForm() {
@@ -175,7 +166,6 @@
     window.onresize = resizeCanvas;
     resizeCanvas();
   </script>
-
   <script>
     // Evento al enviar el formulario para capturar la firma en base64
     document.getElementById('form').addEventListener("submit", function(e) {
@@ -184,7 +174,37 @@
       document.getElementById('base64').value = image;
     }, false);
   </script>
+  <script>
+    const webcamElement = document.getElementById('webcam');
+    const snapButton = document.getElementById('snap');
+    const canvasElement = document.getElementById('photoCanvas');
 
+    // Función para iniciar la webcam
+    function startWebcam() {
+      if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({
+            video: true
+          })
+          .then(function(stream) {
+            webcamElement.srcObject = stream;
+          })
+          .catch(function(error) {
+            console.log("Error al acceder a la webcam: " + error);
+          });
+      }
+    }
+
+    // Función para tomar la foto
+    function takeSnapshot() {
+      const context = canvasElement.getContext('2d');
+      context.drawImage(webcamElement, 0, 0, canvas.width, canvas.height);
+    }
+
+    snapButton.addEventListener('click', takeSnapshot);
+
+    // Iniciar la webcam al cargar la página
+    startWebcam();
+  </script>
   <footer>
     <div class="line"></div>
     <div class="text2">
