@@ -471,3 +471,17 @@ footer {
     /* Color rojo para el texto en negrita */
 }
 
+#video-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+video {
+    width: 50%;
+    max-height: 300px;
+}
+
+canvas {
+    width: 50%;
+    max-height: 300px;
+}
