@@ -471,6 +471,7 @@ footer {
     /* Color rojo para el texto en negrita */
 }
 
+<<<<<<< HEAD
 #video-container {
     display: flex;
     justify-content: space-between;
@@ -486,3 +487,5 @@ canvas {
     max-height: 300px;
 }
 
+=======
+>>>>>>> 52ec4a04648cd118226cf4f5b50356cd83f1f560
