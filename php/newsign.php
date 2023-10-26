@@ -167,7 +167,7 @@
     window.onresize = resizeCanvas;
     resizeCanvas();
   </script>
-  
+
   <script>
     // Evento al enviar el formulario para capturar la firma en base64
     document.getElementById('form').addEventListener("submit", function(e) {
@@ -176,37 +176,48 @@
       document.getElementById('base64').value = image;
     }, false);
   </script>
- <script>
-    const webcamElement = document.getElementById('webcam');
-    const snapButton = document.getElementById('snap');
-    const canvasElement = document.getElementById('photoCanvas');
+  
+    <video id="webcam" autoplay></video>
+    <button id="snap">Tomar Foto</button>
+    <canvas id="photoCanvas" width="640" height="480"></canvas>
+    <img id="capturedPhoto" src="" alt="Foto Capturada" style="display: none; width: 320px; height: 240px;">
 
-    // Función para iniciar la webcam
-    function startWebcam() {
-      if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({
-            video: true
-          })
-          .then(function(stream) {
-            webcamElement.srcObject = stream;
-          })
-          .catch(function(error) {
-            console.log("Error al acceder a la webcam: " + error);
-          });
-      }
-    }
+    <script>
+        const webcamElement = document.getElementById('webcam');
+        const snapButton = document.getElementById('snap');
+        const canvasElement = document.getElementById('photoCanvas');
 
-    // Función para tomar la foto
-    function takeSnapshot() {
-      const context = canvasElement.getContext('2d');
-      context.drawImage(webcamElement, 0, 0, canvasElement.width, canvasElement.height);
-    }
+        // Función para iniciar la webcam
+        function startWebcam() {
+            if (navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({
+                    video: true
+                })
+                .then(function(stream) {
+                    webcamElement.srcObject = stream;
+                })
+                .catch(function(error) {
+                    console.log("Error al acceder a la webcam: " + error);
+                });
+            }
+        }
 
-    snapButton.addEventListener('click', takeSnapshot);
+        // Función para tomar la foto
+        function takeSnapshot() {
+            const context = canvasElement.getContext('2d');
+            context.drawImage(webcamElement, 0, 0, canvasElement.width, canvasElement.height);
+            
+            // Mostrar la foto en el elemento img
+            const capturedPhoto = document.getElementById('capturedPhoto');
+            capturedPhoto.src = canvasElement.toDataURL('image/png');
+            capturedPhoto.style.display = 'block';
+        }
 
-    // Iniciar la webcam al cargar la página
-    startWebcam();
-</script>
+        snapButton.addEventListener('click', takeSnapshot);
+
+        // Iniciar la webcam al cargar la página
+        startWebcam();
+    </script>
 
   <footer>
     <div class="line"></div>
