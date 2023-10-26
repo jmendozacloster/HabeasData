@@ -63,9 +63,11 @@
       <input type="hidden" name="base64" value="" id="base64">
 
       <!-- Contenedor camara -->
-      <video id="webcam" width="300" height="400" autoplay></video>
-      <button id="snap" type="button">Tomar foto</button>
-      <canvas id="photoCanvas" width="300" height="400"></canvas>
+      <div id="video-container">
+        <video id="video" autoplay></video>
+        <canvas id="canvas"></canvas>
+    </div>
+    <button id="capture-button">Tomar Foto</button>
 
       <!-- Contenedor y Elemento Canvas para la firma -->
       <div id="signature-pad" class="signature-pad">
