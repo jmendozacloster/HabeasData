@@ -472,6 +472,9 @@ footer {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 00176ab0e7d625349632d283888a9a4b0f06aba2
 #video-container {
     display: flex;
     justify-content: space-between;
@@ -485,7 +488,11 @@ video {
 canvas {
     width: 50%;
     max-height: 300px;
+<<<<<<< HEAD
 }
 
 =======
 >>>>>>> 52ec4a04648cd118226cf4f5b50356cd83f1f560
+=======
+}
+>>>>>>> 00176ab0e7d625349632d283888a9a4b0f06aba2
