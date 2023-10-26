@@ -5,7 +5,7 @@ ob_start();
 setlocale(LC_CTYPE, 'es_MX');
 
 // Incluir la librería FPDF y comenzar la sesión
-include "fpdf/fpdf.php";
+include "../fpdf/fpdf.php";
 session_start();
 
 // Crear una instancia de FPDF
@@ -27,87 +27,124 @@ while ($r = sqlsrv_fetch_object($query)) {
 }
 
 // Configurar la primera página del PDF
+$pdf = new FPDF($orientation = 'P');
+
+// Obtener datos del usuario usando el nombre
+$sqlSelect = "SELECT * FROM person WHERE name=?";
+$sqlUpdate = "UPDATE person SET pdf_data = CONVERT(varbinary(max), ?) WHERE name=?";
+$querySelect = sqlsrv_query($conn, $sqlSelect, array($name));
+$data = null;
+
+while ($r = sqlsrv_fetch_object($querySelect)) {
+    $data = $r;
+}
+// Crear una instancia de FPDF
+$pdf = new FPDF($orientation = 'P');
+
+// Ajustar los márgenes: 20 unidades a la izquierda, 10 en la parte superior y 20 a la derecha
+$pdf->SetMargins(20, 10, 20);
+
+// Configurar la primera página del PDF
 $pdf->AddPage();
 $pdf->SetFont('Arial', 'B', 16);
 
 // Agregar logo al PDF
-$pdf->Image('Logos/LOGO CLOSTER versiones-04.png', 10, 10, 30);
-// Título del documento
-// Configurar encabezado del documento
-$pdf->setY(2);
-$pdf->setX(10);
-$pdf->SetFont('Arial', 'B', 20);
-$pdf->Cell(5, 20, strtoupper("Closter Pharma"));
+// $pdf->Image('../Logos/LOGO CLOSTER versiones-04.png', 10, 10, 30);
+// Ancho del logo
+$logoWidth = 50;
 
-$pdf->SetFont('Arial', 'B', 14);
+// Calcular la posición x para centrar el logo
+$x = ($pdf->w - $logoWidth) / 2;
+
+// Nuevo valor Y para mover el logo hacia arriba
+$y = 2;
+
+// Agregar el logo centrado al PDF
+$pdf->Image('../Logos/LOGO CLOSTER versiones-04.png', $x, $y, $logoWidth);
+
+
+
+// // Configurar encabezado del documento
+// $pdf->setY(2);
+// $pdf->setX(10);
+// $pdf->SetFont('Arial', 'B', 20);
+// $pdf->Cell(5, 20, strtoupper("Closter Pharma"));
+
+$pdf->SetFont('Arial', 'B', 13);
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 56, 'DOCUMENTO DE CONCENTIMIENTO');
+$pdf->Cell(5, 76, 'AUTORIZACION DE TRATAMIENTO DE DATOS DE CLOSTER PHARMA S.A.S');
+
+// Agregar espacio adicional
+$spacing = 35;  // Establece la cantidad de espacio que deseas entre los párrafos.
+$currentY = $pdf->getY();  // Obtiene la posición Y actual después del primer párrafo.
+$pdf->setY($currentY + $spacing);  // Establece la nueva posición Y, que es la posición actual más el espacio deseado.
 
 $pdf->SetFont('Arial', 'B', 12);
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 76, 'BIENVENIDO/A:');
+$pdf->Cell(5, 106, 'BIENVENIDO/A:');
+
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 86, 'A fin de evitar errores de transcripcion y conocer mejor sus necesidades, le');
+$pdf->Cell(5, 126, utf8_decode('Yo, '.$data->name. ' ,identificado con cedula de ciudadania N°, '. $data->cedula . ' ,de '. $data->origen_cedula));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 96, 'rogamos que rellene este formulario para la inclusion de sus datos personales en');
+$pdf->Cell(5, 136, utf8_decode('por medio del presente documento, doy mi autorización a ustedes Closter Pharma S.A.S,'));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 106, 'nuestro fichero de pacientes, (por favor escriba en mayusculas).');
+$pdf->Cell(5, 146, utf8_decode('para que los datos registrados en mi hoja de vida sean utilizados.'));
+
+
+$pdf->SetFont('Arial', 'B', 12);
+$pdf->setY(2);
+$pdf->setX(10);
+$pdf->Cell(5, 176, utf8_decode('Todo esto para dar cumplimiento a lo citado en la Ley 1581 de 2012 (Ley de Protección de'));
+$pdf->setY(2);
+$pdf->setX(10);
+$pdf->Cell(5, 186, utf8_decode('Datos Personales), siendo consciente de que mis datos serán conservados dentro de sus'));
+$pdf->setY(2);
+$pdf->setX(10);
+$pdf->Cell(5, 196, utf8_decode('bases de datos y su uso será única y exclusivamente para procesos de selección.'));
+
 
 // Agregar datos personales al PDF
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 25, 'NOMBRE COMPLETO: ' . $data->name);
+$pdf->Cell(5, 210 + 30, utf8_decode('Datos Adicionales: '));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 45, 'TELEFONO: ' . $data->phone);
+$pdf->Cell(5, 210 + 40, utf8_decode('CELULAR: ' . $data->phone));
 $pdf->setY(2);
 $pdf->setX(10);
-$pdf->Cell(5, 130 + 65, 'CORREO ELECTRONICO : ' . $data->email);
+$pdf->Cell(5, 210 + 50, utf8_decode('E-MAIL: ' . $data->email));
 
-// Agregar sección de consentimiento al PDF
-$pdf->setY(2);
-$pdf->setX(10);
-$pdf->Cell(5, 130 + 110, 'Acepto que CLOSTER PHARMA S.A.S. trate mis datos de caracter personal para el');
-$pdf->setY(2);
-$pdf->setX(10);
-$pdf->Cell(5, 130 + 120, 'tratamiento de mis datos de salud, asi mismo doy el consentimiento para que me puedan');
-$pdf->setY(2);
-$pdf->setX(10);
-$pdf->Cell(5, 130 + 130, 'informar sobre productos y servicios de la empresa que puedan ser de mi interes.');
 
 // Agregar la fecha de firma al PDF
-$pdf->setY(140);
+$pdf->setY(150);
 $pdf->setX(10);
-$pdf->Cell(5, 0, 'FIRMADO EL DIA: ' . $data->created_at->format('Y-m-d H:i:s'));
+$pdf->Cell(5, 0, utf8_decode('FIRMADO EL DÍA: ' . $data->created_at->format('Y-m-d H:i:s')));
 
-// Agregar la fecha de firma al PDF
+// Agregar la imagen de firma al PDF
 if ($data->firma != "") {
-    $pdf->Image('firmas/' . $data->firma, 40, 155, 48, 27);
+    $pdf->Image('../firmas/' . $data->firma, 40, 155, 68, 37);
 }
 
 // Agregar línea para la firma manual del usuario
-$pdf->setY(180);
+$pdf->setY(230);
 $pdf->setX(10);
 $pdf->Cell(5, 0, 'FIRMA __________________________________________.');
 
 // Generar el archivo PDF y obtener su contenido
-$pdfFilePath = './PDFS/'. $data->name .'.pdf';
+$pdfFilePath = '../PDFS/' . $data->name . '.pdf';
 $pdf->output($pdfFilePath);
-$pdfContent = $pdf->Output('', 'S');
+$pdfContent = mb_convert_encoding($pdf->Output('', 'S'), 'UTF-8');
 
 // Parámetros para la consulta preparada que actualiza 'pdf_data'
-$params = array(
-    array(&$pdfContent, SQLSRV_PARAM_INOUT),
-    array($id, SQLSRV_PARAM_IN),
-);
+$params_update = array(&$pdfContent, $name);
 
 // Preparar la consulta con la función sqlsrv_prepare
-$stmt = sqlsrv_prepare($conn, $sql_2, $params);
+$stmt = sqlsrv_prepare($conn, $sqlUpdate, $params_update);
 
 // Ejecutar la consulta preparada
 if (sqlsrv_execute($stmt)) {
@@ -122,3 +159,4 @@ $buffer = ob_end_flush();
 // Mostrar mensaje de éxito y contenido del búfer
 echo "PDF generado con éxito";
 echo "Contenido del buffer: <pre>", htmlspecialchars($buffer), "</pre>";
+// Redirigir a la página de inicio después de completar las operacio

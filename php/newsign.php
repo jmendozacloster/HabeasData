@@ -9,27 +9,28 @@
   <script src="../js/jquery.min.js"></script>
   <script src="../js/signature_pad.js"></script>
 
+
 </head>
-    <!-- Encabezado de la página -->
-    <header>
-        <img src="../img/encabezado.jpg" alt="Logo de Closter Pharma">
-    </header>
+<!-- Encabezado de la página -->
+<header>
+  <img src="../img/encabezado.jpg" alt="Logo de Closter Pharma">
+</header>
 
 <body>
 
   <div class="container">
-  <!-- Título de Autorización de Tratamiento de Datos -->
-  <div id="habeas-data-title">
-    Autorización de Tratamiento de Datos a Closter Pharma S.A.S
-  </div>
+    <!-- Título de Autorización de Tratamiento de Datos -->
+    <div id="habeas-data-title">
+      Autorización de Tratamiento de Datos a Closter Pharma S.A.S
+    </div>
 
-<br>
-<br>
-<br>
-<br>
-  <!-- Elemento para mostrar la fecha -->
-  <div id="current-date"></div>
-  <!--
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Elemento para mostrar la fecha -->
+    <div id="current-date"></div>
+    <!--
    Texto de Habeas Data
   <div id="habeas-data-text">
     <p>
@@ -39,41 +40,46 @@
       Closter Pharma S.A.S
     </p>
   </div> -->
-  <br>
-<br>
-  <!-- Formulario que recoge los datos y los envía al servidor -->
-  <form id="form" action="../php/savedraw.php" method="post" onsubmit="return validateForm()">
-    <p>
-      Yo, <input type="text" name="name" placeholder="Nombres y Apellidos">, identificado con cedula de ciudadania N°, <input type="int" name="cedula" placeholder="Cedula">
-      de <input type="text" name="origen_cedula" placeholder="Ciudad">, por medio del presente documento, doy mi autorización a ustedes Closter Pharma S.A.S,
-      para que los datos registrados en mi hoja de vida sean utilizados.
-    </p>
-    <p>
-      Todo esto para dar cumplimiento a lo citado en la Ley 1581 de 2012 (Ley de Protección de Datos Personales), siendo consciente de que mis datos serán
-      conservados dentro de sus bases de datos y su uso será única y exclusivamente para procesos de selección.
-    </p>
-    <p>
-      Datos adicionales: <br>
-      <br>
-      Celular: <input type="int" class="form-input" name="telefono" placeholder="Celular"> <br>
-      Email: <input type="text" class="form-input" name="email" placeholder="Correo Electronico">
-    </p>
-    <input type="hidden" name="pacient_id" value="0">
-    <input type="hidden" name="base64" value="" id="base64">
+    <br>
+    <br>
+    <!-- Formulario que recoge los datos y los envía al servidor -->
+    <form id="form" action="../php/savedraw.php" method="post" onsubmit="return validateForm()">
+      <p>
+        Yo, <input type="text" name="name" placeholder="Nombres y Apellidos">, identificado con cedula de ciudadania N°, <input type="int" name="cedula" placeholder="Cedula">
+        de <input type="text" name="origen_cedula" placeholder="Ciudad">, por medio del presente documento, doy mi autorización a ustedes Closter Pharma S.A.S,
+        para que los datos registrados en mi hoja de vida sean utilizados.
+      </p>
+      <p>
+        Todo esto para dar cumplimiento a lo citado en la Ley 1581 de 2012 (Ley de Protección de Datos Personales), siendo consciente de que mis datos serán
+        conservados dentro de sus bases de datos y su uso será única y exclusivamente para procesos de selección.
+      </p>
+      <p>
+        Datos adicionales: <br>
+        <br>
+        Celular: <input type="int" class="form-input" name="telefono" placeholder="Celular"> <br>
+        Email: <input type="text" class="form-input" name="email" placeholder="Correo Electronico">
+      </p>
+      <input type="hidden" name="pacient_id" value="0">
+      <input type="hidden" name="base64" value="" id="base64">
 
-    <!-- Contenedor y Elemento Canvas para la firma -->
-    <div id="signature-pad" class="signature-pad">
-      <div class="description">Firmar aquí:</div>
-      <div class="signature-pad--body">
-        <canvas style="width: 640px; height: 200px; border: 1px black solid; " id="canvas"></canvas>
+      <!-- Contenedor camara -->
+      <video id="webcam" width="300" height="400" autoplay></video>
+      <button id="snap" type="button">Tomar foto</button>
+      <canvas id="photoCanvas" width="300" height="400"></canvas>
+
+      <!-- Contenedor y Elemento Canvas para la firma -->
+      <div id="signature-pad" class="signature-pad">
+        <div class="description">Firmar aquí:</div>
+        <div class="signature-pad--body">
+          <canvas style="width: 640px; height: 200px; border: 1px black solid; " id="canvas"></canvas>
+        </div>
       </div>
-    </div>
-    <div class="button-container1">
-    <button id="saveandfinish" class="btn btn-success">Guardar y Autorizar</button>
-    <!-- Botón para limpiar la firma -->
-    <button id="clearSignature" class="btn btn-warning">Limpiar Firma</button>
-</div>
-  </form>
+      <div class="button-container1">
+        <button id="saveandfinish" class="btn btn-success">Guardar y Autorizar</button>
+        <!-- Botón para limpiar la firma -->
+        <button id="clearSignature" class="btn btn-warning">Limpiar Firma</button>
+      </div>
+    </form>
   </div>
 
   <script>
@@ -168,13 +174,43 @@
       document.getElementById('base64').value = image;
     }, false);
   </script>
+  <script>
+    const webcamElement = document.getElementById('webcam');
+    const snapButton = document.getElementById('snap');
+    const canvasElement = document.getElementById('photoCanvas');
 
-<footer>
+    // Función para iniciar la webcam
+    function startWebcam() {
+      if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({
+            video: true
+          })
+          .then(function(stream) {
+            webcamElement.srcObject = stream;
+          })
+          .catch(function(error) {
+            console.log("Error al acceder a la webcam: " + error);
+          });
+      }
+    }
+
+    // Función para tomar la foto
+    function takeSnapshot() {
+      const context = canvasElement.getContext('2d');
+      context.drawImage(webcamElement, 0, 0, canvas.width, canvas.height);
+    }
+
+    snapButton.addEventListener('click', takeSnapshot);
+
+    // Iniciar la webcam al cargar la página
+    startWebcam();
+  </script>
+  <footer>
     <div class="line"></div>
-          <div class="text2">
-            <small>&copy; 2023 <b>Closter Pharma</b> | Area IT  | Dashboard Habeas Data.</small>
-        </div>
-    </footer>
+    <div class="text2">
+      <small>&copy; 2023 <b>Closter Pharma</b> | Area IT | Dashboard Habeas Data.</small>
+    </div>
+  </footer>
 </body>
 
 </html>

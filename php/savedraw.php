@@ -133,11 +133,11 @@ $pdf->Cell(5, 0, utf8_decode('FIRMADO EL DÍA: ' . $data->created_at->format('Y-
 
 // Agregar la imagen de firma al PDF
 if ($data->firma != "") {
-    $pdf->Image('../firmas/' . $data->firma, 40, 155, 68, 37);
+    $pdf->Image('../firmas/' . $data->firma, 40, 180, 68, 37);
 }
 
 // Agregar línea para la firma manual del usuario
-$pdf->setY(200);
+$pdf->setY(230);
 $pdf->setX(10);
 $pdf->Cell(5, 0, 'FIRMA __________________________________________.');
 

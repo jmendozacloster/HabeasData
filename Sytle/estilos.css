@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap'); /* Importa la fuente Roboto, que es una fuente sans-serif moderna */
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+/* Importa la fuente Roboto, que es una fuente sans-serif moderna */
 
 /* Restablece márgenes y rellenos por defecto */
 * {
@@ -13,7 +14,8 @@ body {
     background-color: #eceaea;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Asegura que el body ocupe al menos el alto total de la ventana del navegador */
+    min-height: 100vh;
+    /* Asegura que el body ocupe al menos el alto total de la ventana del navegador */
 }
 
 /*Encabezado de la página */
@@ -23,130 +25,195 @@ header {
 
 header img {
     width: 100%;
-    height: auto; /* Mantiene la proporción original de la imagen */
+    height: auto;
+    /* Mantiene la proporción original de la imagen */
 }
 
 
 /*Titulo 1 */
-h2{
+h2 {
     font-family: 'Dosis', sans-serif;
-    font-size: 20px; /* Aumenta un poco el tamaño del texto para darle más presencia */
-    display: flex;          /* Usa Flexbox */
-    flex-direction: column; /* Organiza los hijos en una columna */
-    justify-content: center; /* Centra los hijos verticalmente */
-    align-items: center;    /* Centra los hijos horizontalmente */
-    height: 5vh;          /* Usa el 100% del alto de la ventana del navegador */
-    text-align: center;     /* Asegura que el texto esté centrado */
+    font-size: 20px;
+    /* Aumenta un poco el tamaño del texto para darle más presencia */
+    display: flex;
+    /* Usa Flexbox */
+    flex-direction: column;
+    /* Organiza los hijos en una columna */
+    justify-content: center;
+    /* Centra los hijos verticalmente */
+    align-items: center;
+    /* Centra los hijos horizontalmente */
+    height: 5vh;
+    /* Usa el 100% del alto de la ventana del navegador */
+    text-align: center;
+    /* Asegura que el texto esté centrado */
 }
+
 /*Titulo 2 */
 h1 {
-    font-family: 'Dosis', sans-serif; /* Utiliza la fuente Roboto */
-    font-size: 35px; /* Aumenta un poco el tamaño del texto para darle más presencia */
+    font-family: 'Dosis', sans-serif;
+    /* Utiliza la fuente Roboto */
+    font-size: 35px;
+    /* Aumenta un poco el tamaño del texto para darle más presencia */
     margin-bottom: 20px;
-    color: #000000; /* Cambia el color del texto a blanco para que contraste con el fondo degradado */
-    padding: 10px 20px; /* Añade relleno alrededor del título para que el fondo degradado sea más visible */
-    display: inline-block; /* Hace que el fondo degradado solo rodee el texto, y no toda la línea */
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.527); /* Agrega una sombra de texto para darle profundidad */
-    border-radius: 10px; /* Suaviza las esquinas del fondo degradado */
-    display: flex;          /* Usa Flexbox */
-    flex-direction: column; /* Organiza los hijos en una columna */
-    justify-content: center; /* Centra los hijos verticalmente */
-    align-items: center;    /* Centra los hijos horizontalmente */
-    height: 1vh;          /* Usa el 100% del alto de la ventana del navegador */
-    text-align: center;     /* Asegura que el texto esté centrado */
+    color: #000000;
+    /* Cambia el color del texto a blanco para que contraste con el fondo degradado */
+    padding: 10px 20px;
+    /* Añade relleno alrededor del título para que el fondo degradado sea más visible */
+    display: inline-block;
+    /* Hace que el fondo degradado solo rodee el texto, y no toda la línea */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.527);
+    /* Agrega una sombra de texto para darle profundidad */
+    border-radius: 10px;
+    /* Suaviza las esquinas del fondo degradado */
+    display: flex;
+    /* Usa Flexbox */
+    flex-direction: column;
+    /* Organiza los hijos en una columna */
+    justify-content: center;
+    /* Centra los hijos verticalmente */
+    align-items: center;
+    /* Centra los hijos horizontalmente */
+    height: 1vh;
+    /* Usa el 100% del alto de la ventana del navegador */
+    text-align: center;
+    /* Asegura que el texto esté centrado */
 }
-  
+
 
 
 /* Estilos generales para el contenido y el boton */
-.button-container,.documents-title {
+.button-container,
+.documents-title {
     display: flex;
-    justify-content: flex-start;  /* Alinear horizontalmente a la izquierda */
-    align-items: flex-start;      /* Alinear verticalmente arriba */
-    margin-left: 12px;            /* Margen izquierdo */
-    margin-top: 5px;              /* Margen superior */
-    margin-bottom: 20px;          /* Margen inferior */
+    justify-content: flex-start;
+    /* Alinear horizontalmente a la izquierda */
+    align-items: flex-start;
+    /* Alinear verticalmente arriba */
+    margin-left: 12px;
+    /* Margen izquierdo */
+    margin-top: 5px;
+    /* Margen superior */
+    margin-bottom: 20px;
+    /* Margen inferior */
 }
 
 /* Estilos del boton */
 .new-sign-button {
     font-family: 'Dosis', sans-serif;
     font-size: 15px;
-    background-color: #f06b12;          /* Color de fondo rojo */
-    color: #ffffff;                     /* Color negro para el texto */
-    padding: 10px 20px;                 /* Relleno */
-    border-radius: 5px;                 /* Esquinas redondeadas */
-    text-decoration: none;              /* Remover subrayado del enlace */
-    font-weight: bold;                  /* Texto en negrita */
-    display: flex;                      /* Para centrar el logo y el texto en el botón */
-    align-items: center;                /* Centrar verticalmente el logo y el texto */
-    transition: background-color 0.3s, color 0.3s; /* Transición suave de colores */
-    box-shadow: 0px 4px 8px rgb(219, 121, 28); /* Sombra */
+    background-color: #f06b12;
+    /* Color de fondo rojo */
+    color: #ffffff;
+    /* Color negro para el texto */
+    padding: 10px 20px;
+    /* Relleno */
+    border-radius: 5px;
+    /* Esquinas redondeadas */
+    text-decoration: none;
+    /* Remover subrayado del enlace */
+    font-weight: bold;
+    /* Texto en negrita */
+    display: flex;
+    /* Para centrar el logo y el texto en el botón */
+    align-items: center;
+    /* Centrar verticalmente el logo y el texto */
+    transition: background-color 0.3s, color 0.3s;
+    /* Transición suave de colores */
+    box-shadow: 0px 4px 8px rgb(219, 121, 28);
+    /* Sombra */
 }
 
 .new-sign-button:hover {
-    background-color: #e78708;          /* Color de fondo más oscuro al pasar el mouse */
+    background-color: #e78708;
+    /* Color de fondo más oscuro al pasar el mouse */
 }
 
 .new-sign-button:active {
-    background-color: #e78708;          /* Color de fondo aún más oscuro al hacer clic */
-    color: #000000;                     /* Color blanco para el texto al hacer clic */
+    background-color: #e78708;
+    /* Color de fondo aún más oscuro al hacer clic */
+    color: #000000;
+    /* Color blanco para el texto al hacer clic */
 }
 
 /* Estilos del logo del boton*/
 .logo {
-    margin-right: 10px;                /* Espacio a la derecha del logo */
-    font-size: 25px;                   /* Tamaño del logo (ajustar según el logo utilizado) */
+    margin-right: 10px;
+    /* Espacio a la derecha del logo */
+    font-size: 25px;
+    /* Tamaño del logo (ajustar según el logo utilizado) */
 }
 
 
 /* Titulo 3 */
 .documents-title {
     font-family: 'Dosis', sans-serif;
-    font-weight: bold;                 /* Título en negrita */
-    font-size: 24px;                  /* Tamaño del texto */
+    font-weight: bold;
+    /* Título en negrita */
+    font-size: 24px;
+    /* Tamaño del texto */
 }
 
 
 /* Estilos generales de la tabla */
 table {
-    font-family: 'Dosis', sans-serif;  /* Especifica la fuente de la tabla. */
-    width: 90%;                        /* Ancho de la tabla. */
-    border-collapse: separate;         /* Las celdas de la tabla tienen bordes separados. */
-    border-spacing: 0;                 /* Espacio entre bordes de celdas. */
-    margin: 20px auto;                 /* Margen de la tabla. */
-    font-size: 16px;                   /* Tamaño de fuente. */
-    text-align: left;                  /* Alineación del texto. */
-    border-radius: 10px;               /* Bordes redondeados. */
-    overflow: hidden;                  /* Oculta contenido desbordado. */
-    border: 1px solid #ffffff;         /* Borde blanco para toda la tabla. */
+    font-family: 'Dosis', sans-serif;
+    /* Especifica la fuente de la tabla. */
+    width: 90%;
+    /* Ancho de la tabla. */
+    border-collapse: separate;
+    /* Las celdas de la tabla tienen bordes separados. */
+    border-spacing: 0;
+    /* Espacio entre bordes de celdas. */
+    margin: 20px auto;
+    /* Margen de la tabla. */
+    font-size: 16px;
+    /* Tamaño de fuente. */
+    text-align: left;
+    /* Alineación del texto. */
+    border-radius: 10px;
+    /* Bordes redondeados. */
+    overflow: hidden;
+    /* Oculta contenido desbordado. */
+    border: 1px solid #ffffff;
+    /* Borde blanco para toda la tabla. */
 }
 
 /* Agregando bordes blancos a los encabezados y celdas de la tabla */
-th, td {
-    border: 1px solid #dbcfcf;         /* Borde blanco. */
+th,
+td {
+    border: 1px solid #dbcfcf;
+    /* Borde blanco. */
     align-items: center;
 }
 
 
 /* Estilos para el encabezado de la tabla */
 th {
-    font-family: 'Dosis', sans-serif;  /* Fuente específica para los encabezados de la tabla. */
-    background-color: #f37521;        /* Color de fondo naranja para los encabezados. */
-    color: #ffffff;                   /* Color de texto blanco para los encabezados. */
-    padding: 10px;                    /* Espaciado interno de 10px para los encabezados. */
+    font-family: 'Dosis', sans-serif;
+    /* Fuente específica para los encabezados de la tabla. */
+    background-color: #f37521;
+    /* Color de fondo naranja para los encabezados. */
+    color: #ffffff;
+    /* Color de texto blanco para los encabezados. */
+    padding: 10px;
+    /* Espaciado interno de 10px para los encabezados. */
 }
 
 /* Estilos para las filas */
 tr {
-    font-family: 'Dosis', sans-serif;  /* Fuente específica para las filas de la tabla. */
-    border-bottom: 1px solid #ffffff;  /* Línea de separación blanca entre filas. */
+    font-family: 'Dosis', sans-serif;
+    /* Fuente específica para las filas de la tabla. */
+    border-bottom: 1px solid #ffffff;
+    /* Línea de separación blanca entre filas. */
 }
 
 /* Estilos para las celdas */
 td {
-    padding: 8px 5px;                 /* Espaciado interno para las celdas. */
-    border: 1px solid #ffffff;        /* Borde blanco alrededor de las celdas. */
+    padding: 8px 5px;
+    /* Espaciado interno para las celdas. */
+    border: 1px solid #ffffff;
+    /* Borde blanco alrededor de las celdas. */
 }
 
 .centered-content {
@@ -155,119 +222,161 @@ td {
 }
 
 td a:not(:last-child) {
-    margin-right: 20px;  /* Espacio a la derecha de cada enlace, excepto el último. */
+    margin-right: 20px;
+    /* Espacio a la derecha de cada enlace, excepto el último. */
 }
 
 /* Estilo para las filas al pasar el ratón por encima */
 tr:hover {
-    background-color: #ffffff;        /* Color de fondo blanco al pasar el ratón sobre una fila. */
+    background-color: #ffffff;
+    /* Color de fondo blanco al pasar el ratón sobre una fila. */
 }
 
 /* Estilos para los enlaces dentro de la tabla */
 td a {
-    text-decoration: none;            /* Sin subrayado en los enlaces. */
-    margin: 0 5px;                    /* Espacio horizontal entre enlaces. */
-    padding: 5px 10px;                /* Relleno alrededor de los enlaces. */
-    color: #f37521;                   /* Color de texto naranja para enlaces. */
-    border: 1px solid #f37521;        /* Borde naranja alrededor de enlaces. */
-    border-radius: 5px;               /* Esquinas redondeadas para enlaces. */
-    font-size: 14px;                  /* Tamaño de fuente para enlaces. */
-    display: inline-block;            /* Los enlaces se comportan como bloques en línea. */
+    text-decoration: none;
+    /* Sin subrayado en los enlaces. */
+    margin: 0 5px;
+    /* Espacio horizontal entre enlaces. */
+    padding: 5px 10px;
+    /* Relleno alrededor de los enlaces. */
+    color: #f37521;
+    /* Color de texto naranja para enlaces. */
+    border: 1px solid #f37521;
+    /* Borde naranja alrededor de enlaces. */
+    border-radius: 5px;
+    /* Esquinas redondeadas para enlaces. */
+    font-size: 14px;
+    /* Tamaño de fuente para enlaces. */
+    display: inline-block;
+    /* Los enlaces se comportan como bloques en línea. */
 }
 
 /* Efecto al pasar el ratón por encima de los enlaces */
 td a:hover {
-    background-color: #f37521;        /* Color de fondo naranja al pasar el ratón sobre un enlace. */
-    color: #ffffff;                   /* Color de texto blanco al pasar el ratón sobre un enlace. */
+    background-color: #f37521;
+    /* Color de fondo naranja al pasar el ratón sobre un enlace. */
+    color: #ffffff;
+    /* Color de texto blanco al pasar el ratón sobre un enlace. */
 }
 
 /* Estilos para los íconos dentro de los enlaces */
 td a i {
-    margin-right: 8px;                /* Espacio a la derecha de los íconos. */
-    vertical-align: middle;           /* Alinea verticalmente el ícono con el texto del enlace. */
-    color: #f37521;                   /* Color naranja para los íconos. */
-    font-size: 25px;                  /* Tamaño de fuente para los íconos. */
+    margin-right: 8px;
+    /* Espacio a la derecha de los íconos. */
+    vertical-align: middle;
+    /* Alinea verticalmente el ícono con el texto del enlace. */
+    color: #f37521;
+    /* Color naranja para los íconos. */
+    font-size: 25px;
+    /* Tamaño de fuente para los íconos. */
 }
 
 /* Cambia el color del ícono a blanco al pasar el ratón por encima */
 td a:hover i {
-    color: #ffffff;                   /* Color de texto blanco para el ícono al pasar el ratón sobre un enlace. */
+    color: #ffffff;
+    /* Color de texto blanco para el ícono al pasar el ratón sobre un enlace. */
 }
 
 
 
 /* Estilos para el contenedor formulario */
 .container {
-    border: 1px solid #beb9b9; /* Borde de 2 píxeles sólido, puedes ajustar el ancho y el color según tus preferencias */
-    padding: 20px; /* Espacio dentro del borde */
-    border-radius: 10px; /* Bordes redondeados */
-    max-width: 1000px; /* Ancho máximo del contenedor */
-    margin: 20px auto; /* Centrar el contenedor horizontalmente */
+    border: 1px solid #beb9b9;
+    /* Borde de 2 píxeles sólido, puedes ajustar el ancho y el color según tus preferencias */
+    padding: 20px;
+    /* Espacio dentro del borde */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    max-width: 1000px;
+    /* Ancho máximo del contenedor */
+    margin: 20px auto;
+    /* Centrar el contenedor horizontalmente */
 
 }
-  
+
 #habeas-data-title {
     font-family: 'Dosis', sans-serif;
-    font-weight: bold; /* Negrilla */
-    color: black; /* Color negro */
+    font-weight: bold;
+    /* Negrilla */
+    color: black;
+    /* Color negro */
     font-size: 25px;
-    text-align: center; /* Texto centrado */
+    text-align: center;
+    /* Texto centrado */
 }
 
 #current-date {
     font-family: 'Dosis', sans-serif;
-    font-weight: bold; /* Texto en negrilla */
-    color: #000; /* Color negro */
-    text-align: left; /* Alineado a la izquierda */
+    font-weight: bold;
+    /* Texto en negrilla */
+    color: #000;
+    /* Color negro */
+    text-align: left;
+    /* Alineado a la izquierda */
     font-size: 13px;
 }
 
 #form {
-    font-family: 'Dosis', sans-serif; /* Fuente personalizada */
-    color: #333; /* Color del texto */
-    line-height: 1.6; /* Espaciado entre líneas */
+    font-family: 'Dosis', sans-serif;
+    /* Fuente personalizada */
+    color: #333;
+    /* Color del texto */
+    line-height: 1.6;
+    /* Espaciado entre líneas */
     font-size: 15px;
     font-weight: bold;
 }
 
 #form p {
-    font-family: 'Dosis', sans-serif; /* Fuente personalizada */
-    margin-bottom: 15px; /* Espacio entre párrafos */
+    font-family: 'Dosis', sans-serif;
+    /* Fuente personalizada */
+    margin-bottom: 15px;
+    /* Espacio entre párrafos */
     font-size: 15px;
     font-weight: bold;
 }
 
 #form p input {
-    font-family: 'Dosis', sans-serif; /* Fuente personalizada */
+    font-family: 'Dosis', sans-serif;
+    /* Fuente personalizada */
     padding: 8px;
     margin-bottom: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 15px;
     font-weight: bold;
-    width: 210px; /* Cambia el valor a tu preferencia de ancho */
+    width: 210px;
+    /* Cambia el valor a tu preferencia de ancho */
 }
 
 .form-input {
-    font-family: 'Dosis', sans-serif; /* Fuente personalizada */
+    font-family: 'Dosis', sans-serif;
+    /* Fuente personalizada */
     padding: 8px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 15px;
     font-weight: bold;
-    width: 210px; /* Cambia el valor a tu preferencia de ancho */
+    width: 210px;
+    /* Cambia el valor a tu preferencia de ancho */
 }
 
 #signature-pad {
-    text-align: center; /* Centra el contenido horizontalmente */
-    font-family: 'Dosis', sans-serif; /* Fuente personalizada */
+    text-align: center;
+    /* Centra el contenido horizontalmente */
+    font-family: 'Dosis', sans-serif;
+    /* Fuente personalizada */
 }
 
 .description {
-    font-weight: bold; /* Texto en negrita */
-    margin-bottom: 10px; /* Espacio inferior */
-    color: #000000; /* Color de texto */
+    font-weight: bold;
+    /* Texto en negrita */
+    margin-bottom: 10px;
+    /* Espacio inferior */
+    color: #000000;
+    /* Color de texto */
     font-size: 15px;
 }
 
@@ -278,69 +387,86 @@ td a:hover i {
     border-radius: 10px;
     transition: border 0.3s ease-in-out;
     box-shadow: 0 0 10px rgb(213, 206, 206);
-    margin: 0 auto; /* Centra el canvas horizontalmente */
+    margin: 0 auto;
+    /* Centra el canvas horizontalmente */
+    /* display: none; */
+    /* inicialmente oculto hasta que se tome una foto */
+}
+#photoCanvas {
+    display: none;  /* inicialmente oculto hasta que se tome una foto */
 }
 
 .button-container1 {
-    display: flex; /* Muestra los botones en línea horizontal */
-    justify-content: center; /* Alinear horizontalmente a la izquierda */
-    margin-top: 20px; /* Espacio superior */
+    display: flex;
+    /* Muestra los botones en línea horizontal */
+    justify-content: center;
+    /* Alinear horizontalmente a la izquierda */
+    margin-top: 20px;
+    /* Espacio superior */
 }
 
 .button-container1 button {
-    font-family: 'Dosis', sans-serif; /* Fuente personalizada */
-    font-weight: bold; /* Texto en negrita */
-    background-color: #f06b12; /* Color de fondo */
-    color: white; /* Color de texto */
-    padding: 10px 20px; /* Espaciado interno */
-    font-size: 16px; /* Tamaño de fuente */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Esquinas redondeadas */
-    cursor: pointer; /* Cursor de puntero */
-    margin: 0 10px; /* Espacio entre los botones */
+    font-family: 'Dosis', sans-serif;
+    /* Fuente personalizada */
+    font-weight: bold;
+    /* Texto en negrita */
+    background-color: #f06b12;
+    /* Color de fondo */
+    color: white;
+    /* Color de texto */
+    padding: 10px 20px;
+    /* Espaciado interno */
+    font-size: 16px;
+    /* Tamaño de fuente */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Esquinas redondeadas */
+    cursor: pointer;
+    /* Cursor de puntero */
+    margin: 0 10px;
+    /* Espacio entre los botones */
 }
 
 .button-container1 button:hover {
-    background-color: #e78708; /* Cambia el color de fondo al pasar el ratón */
+    background-color: #e78708;
+    /* Cambia el color de fondo al pasar el ratón */
 }
 
 
 /* Estilos del Footer o pie de pagina */
-  footer {
+footer {
     font-family: 'Dosis', sans-serif;
-    margin-top: auto; /* Empuja el footer hacia la parte inferior si hay espacio disponible */
-    padding: 10px 0; /* Relleno superior e inferior */
-    color: #000000; /* Color blanco para el texto */
+    margin-top: auto;
+    /* Empuja el footer hacia la parte inferior si hay espacio disponible */
+    padding: 10px 0;
+    /* Relleno superior e inferior */
+    color: #000000;
+    /* Color blanco para el texto */
 }
 
 .line {
-    width: 100%; /* Ocupa todo el ancho disponible */
-    height: 2px; /* Altura de la línea */
-    background-color: #b3a4a4; /* Color rojo para la línea */
-    margin-bottom: 10px; /* Espacio entre la línea y el texto */
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+    height: 2px;
+    /* Altura de la línea */
+    background-color: #b3a4a4;
+    /* Color rojo para la línea */
+    margin-bottom: 10px;
+    /* Espacio entre la línea y el texto */
 }
 
 .text2 {
-    text-align: center; /* Centra el texto horizontalmente */
+    text-align: center;
+    /* Centra el texto horizontalmente */
 }
 
 .text2 small {
-    font-size: 14px; /* Ajusta el tamaño del texto */
+    font-size: 14px;
+    /* Ajusta el tamaño del texto */
 }
 
 .text2 b {
-    color: #000000; /* Color rojo para el texto en negrita */
+    color: #000000;
+    /* Color rojo para el texto en negrita */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
