@@ -176,8 +176,8 @@
       document.getElementById('base64').value = image;
     }, false);
   </script>
-
-  <div id="video-container">
+    
+    <div id="video-container">
         <video id="video" autoplay></video>
         <canvas id="canvas"></canvas>
     </div>
@@ -200,8 +200,8 @@
         }
     </style>
 
-        <script>
-          // Obtener elementos HTML
+    <script>
+      // Obtener elementos HTML
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const captureButton = document.getElementById('capture-button');
@@ -236,16 +236,8 @@ captureButton.addEventListener('click', function() {
     const imageContainer = document.getElementById('captured-image-container');
     imageContainer.appendChild(capturedImage);
 });
-        </script>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Captura de Foto</title>
-</head>
-</html>
-
+    </script>
 
   <footer>
     <div class="line"></div>
