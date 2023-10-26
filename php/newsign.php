@@ -63,11 +63,9 @@
       <input type="hidden" name="base64" value="" id="base64">
 
       <!-- Contenedor camara -->
-      <div id="video-container">
-        <video id="video" autoplay></video>
-        <canvas id="canvas"></canvas>
-    </div>
-    <button id="capture-button">Tomar Foto</button>
+      <video id="webcam" width="300" height="400" autoplay></video>
+      <button id="snap" type="button">Tomar foto</button>
+      <canvas id="photoCanvas" width="300" height="400"></canvas>
 
       <!-- Contenedor y Elemento Canvas para la firma -->
       <div id="signature-pad" class="signature-pad">
@@ -177,39 +175,35 @@
     }, false);
   </script>
   <script>
-const video = document.getElementById('video');
-const canvas = document.getElementById('canvas');
-const captureButton = document.getElementById('capture-button');
+    const webcamElement = document.getElementById('webcam');
+    const snapButton = document.getElementById('snap');
+    const canvasElement = document.getElementById('photoCanvas');
 
-// Verificar si el navegador admite la API de medios
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices
-        .getUserMedia({ video: true }) // Acceder a la cámara
-        .then(function(stream) {
-            // Mostrar el video de la cámara en el elemento 'video'
-            video.srcObject = stream;
-        })
-        .catch(function(error) {
-            console.error('Error al acceder a la cámara: ', error);
-        });
-}
+    // Función para iniciar la webcam
+    function startWebcam() {
+      if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({
+            video: true
+          })
+          .then(function(stream) {
+            webcamElement.srcObject = stream;
+          })
+          .catch(function(error) {
+            console.log("Error al acceder a la webcam: " + error);
+          });
+      }
+    }
 
-// Evento al hacer clic en el botón para capturar una foto
-captureButton.addEventListener('click', function() {
-    // Capturar una imagen del video y mostrarla en el canvas
-    const context = canvas.getContext('2d');
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    // Función para tomar la foto
+    function takeSnapshot() {
+      const context = canvasElement.getContext('2d');
+      context.drawImage(webcamElement, 0, 0, canvas.width, canvas.height);
+    }
 
-    // Opcionalmente, puedes convertir la imagen en una URL de datos (data URL)
-    const imageDataUrl = canvas.toDataURL('image/jpeg'); // Cambia 'image/jpeg' según el formato deseado
+    snapButton.addEventListener('click', takeSnapshot);
 
-    // Crear una nueva imagen HTML y establecer su fuente como la imagen capturada
-    const capturedImage = new Image();
-    capturedImage.src = imageDataUrl;
-
-    // Agregar la imagen capturada a un elemento de tu página (por ejemplo, un div)
-    const imageContainer = document.getElementById('captured-image-container');
-    imageContainer.appendChild(capturedImage);
+    // Iniciar la webcam al cargar la página
+    startWebcam();
   </script>
   <footer>
     <div class="line"></div>
