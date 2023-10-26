@@ -176,48 +176,63 @@
       document.getElementById('base64').value = image;
     }, false);
   </script>
-  
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Captura de Foto</title>
+</head>
+
+    <!-- Elemento de video para mostrar la cámara web -->
     <video id="webcam" autoplay></video>
-    <button id="snap">Tomar Foto</button>
+    
+    <!-- Botón para tomar la foto -->
+    <button id="snapButton">Tomar Foto</button>
+    
+    <!-- Elemento de lienzo para mostrar la foto capturada -->
     <canvas id="photoCanvas" width="640" height="480"></canvas>
-    <img id="capturedPhoto" src="" alt="Foto Capturada" style="display: none; width: 320px; height: 240px;">
 
     <script>
-        const webcamElement = document.getElementById('webcam');
-        const snapButton = document.getElementById('snap');
-        const canvasElement = document.getElementById('photoCanvas');
+        document.addEventListener('DOMContentLoaded', function() {
+            const webcamElement = document.getElementById('webcam');
+            const snapButton = document.getElementById('snapButton');
+            const canvasElement = document.getElementById('photoCanvas');
 
-        // Función para iniciar la webcam
-        function startWebcam() {
-            if (navigator.mediaDevices.getUserMedia) {
-                navigator.mediaDevices.getUserMedia({
-                    video: true
-                })
-                .then(function(stream) {
-                    webcamElement.srcObject = stream;
-                })
-                .catch(function(error) {
-                    console.log("Error al acceder a la webcam: " + error);
-                });
+            // Función para iniciar la webcam
+            function startWebcam() {
+                if (navigator.mediaDevices.getUserMedia) {
+                    navigator.mediaDevices.getUserMedia({ video: { width: 1280, height: 720 } })
+                        .then(function(stream) {
+                            webcamElement.srcObject = stream;
+                        })
+                        .catch(function(error) {
+                            console.log("Error al acceder a la webcam: " + error);
+                        });
+                }
             }
-        }
 
-        // Función para tomar la foto
-        function takeSnapshot() {
-            const context = canvasElement.getContext('2d');
-            context.drawImage(webcamElement, 0, 0, canvasElement.width, canvasElement.height);
-            
-            // Mostrar la foto en el elemento img
-            const capturedPhoto = document.getElementById('capturedPhoto');
-            capturedPhoto.src = canvasElement.toDataURL('image/png');
-            capturedPhoto.style.display = 'block';
-        }
+            // Función para tomar la foto
+            function takeSnapshot() {
+                const context = canvasElement.getContext('2d');
+                context.drawImage(webcamElement, 0, 0, canvasElement.width, canvasElement.height);
+                
+                // Puedes agregar código aquí para mostrar la imagen capturada en tu página
+                // Por ejemplo, crear una nueva imagen y establecer su fuente como la imagen capturada
+                var img = new Image();
+                img.src = canvasElement.toDataURL('image/png');
+                document.body.appendChild(img);
+            }
 
-        snapButton.addEventListener('click', takeSnapshot);
+            snapButton.addEventListener('click', takeSnapshot);
 
-        // Iniciar la webcam al cargar la página
-        startWebcam();
+            // Iniciar la webcam al cargar la página
+            startWebcam();
+        });
     </script>
+
+</html>
+
 
   <footer>
     <div class="line"></div>
