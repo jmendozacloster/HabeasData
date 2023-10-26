@@ -62,16 +62,13 @@
       <input type="hidden" name="pacient_id" value="0">
       <input type="hidden" name="base64" value="" id="base64">
 
-      <!-- Contenedor camara -->
-      <video id="webcam" width="300" height="400" autoplay></video>
-      <button id="snap" type="button" onclick="takeSnapshot()">Tomar foto</button> <!-- Agregar evento onclick -->
-      <canvas id="photoCanvas" width="300" height="400"></canvas>
-      <!-- Contenedor foto tomada -->
-      <input type="file" accept="image/*" capture="camera" id="cameraInput">
-      <img id="capturedImage" style="display:none; width: 150px; height: auto;" />
-      <button id="removeImageBtn" onclick="removeImage()" style="display:none;">Eliminar Imagen</button>
 
-
+      <!-- Contenedor cámara y botón para tomar foto -->
+      <div id="video-container">
+        <video id="video" autoplay></video>
+        <button id="capture-button" type="button">Tomar foto</button>
+      </div>
+      <canvas id="canvas2" width="2000" height="4000"></canvas>
 
       <!-- Contenedor y Elemento Canvas para la firma -->
       <div id="signature-pad" class="signature-pad">
@@ -87,6 +84,38 @@
       </div>
     </form>
   </div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Obtener elementos HTML
+      const video = document.getElementById('video');
+      const canvas2 = document.getElementById('canvas2');
+      const captureButton = document.getElementById('capture-button');
+
+      // Verificar si el navegador admite la API de medios
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices
+          .getUserMedia({
+            video: true
+          }) // Acceder a la cámara
+          .then(function(stream) {
+            // Mostrar el video de la cámara en el elemento 'video'
+            video.srcObject = stream;
+          })
+          .catch(function(error) {
+            console.error('Error al acceder a la cámara: ', error);
+          });
+      }
+
+      // Evento al hacer clic en el botón para capturar una foto
+      captureButton.addEventListener('click', function() {
+        // Capturar una imagen del video y mostrarla en el canvas
+        const context = canvas2.getContext('2d');
+        context.drawImage(video, 0, 0, canvas2.width, canvas2.height);
+      });
+    });
+  </script>
 
   <script>
     function validateForm() {
@@ -180,65 +209,7 @@
       document.getElementById('base64').value = image;
     }, false);
   </script>
-  <script>
-    const webcamElement = document.getElementById('webcam');
-    const snapButton = document.getElementById('snap');
-    const canvasElement = document.getElementById('photoCanvas');
-  </script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      startWebcam();
-    });
-
-
-    // Función para iniciar la webcam
-    let webcamElement = document.getElementById('webcam'); // Agregar esta línea para inicializar webcamElement
-    function startWebcam() {
-      if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({
-            video: true
-          })
-          .then(function(stream) {
-            webcamElement.srcObject = stream;
-          })
-          .catch(function(error) {
-            console.log("Error al acceder a la webcam: " + error);
-          });
-      }
-    }
-
-    // Función para tomar la foto
-    function takeSnapshot() {
-
-      const canvasElement = document.getElementById('photoCanvas');
-      const context = canvasElement.getContext('2d');
-      context.drawImage(webcamElement, 0, 0, canvasElement.width, canvasElement.height); // Corregir a canvasElement.width y canvasElement.height
-
-      const capturedImageElement = document.getElementById('capturedImage');
-      capturedImageElement.src = canvasElement.toDataURL('image/png');
-      capturedImageElement.style.display = 'block';
-
-      document.getElementById('removeImageBtn').style.display = 'block';
-    }
-
-    function removeImage() {
-      const canvasElement = document.getElementById('photoCanvas');
-      const context = canvasElement.getContext('2d');
-      context.clearRect(0, 0, canvasElement.width, canvasElement.height);
-
-      const capturedImageElement = document.getElementById('capturedImage');
-      capturedImageElement.src = '';
-      capturedImageElement.style.display = 'none';
-
-      document.getElementById('removeImageBtn').style.display = 'none';
-    }
-
-    // Iniciar la webcam al cargar la página
-    document.getElementById('snap').addEventListener('click', takeSnapshot);
-
-    startWebcam();
-  </script>
   <footer>
     <div class="line"></div>
     <div class="text2">

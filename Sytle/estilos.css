@@ -392,8 +392,10 @@ td a:hover i {
     /* display: none; */
     /* inicialmente oculto hasta que se tome una foto */
 }
+
 #photoCanvas {
-    display: none;  /* inicialmente oculto hasta que se tome una foto */
+    display: none;
+    /* inicialmente oculto hasta que se tome una foto */
 }
 
 .button-container1 {
@@ -471,11 +473,7 @@ footer {
     /* Color rojo para el texto en negrita */
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 00176ab0e7d625349632d283888a9a4b0f06aba2
+
 #video-container {
     display: flex;
     justify-content: space-between;
@@ -489,13 +487,19 @@ video {
 canvas {
     width: 50%;
     max-height: 300px;
-<<<<<<< HEAD
+
 }
 
-=======
->>>>>>> 52ec4a04648cd118226cf4f5b50356cd83f1f560
-=======
+#canvas2 {
+    width: 400PX;
+    max-height: 300px;
+    display: flex;
+    justify-content: space-between;
 }
->>>>>>> 00176ab0e7d625349632d283888a9a4b0f06aba2
-=======
->>>>>>> b5f39e3a4ee47c09fc5cc136891e753ff19b3d3a
+
+#capture-button{
+    width: 50PX;
+    max-height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
