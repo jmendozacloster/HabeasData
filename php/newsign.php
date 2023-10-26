@@ -10,6 +10,7 @@
   <script src="../js/signature_pad.js"></script>
 
 
+
 </head>
 <!-- Encabezado de la página -->
 <header>
@@ -166,6 +167,7 @@
     window.onresize = resizeCanvas;
     resizeCanvas();
   </script>
+  
   <script>
     // Evento al enviar el formulario para capturar la firma en base64
     document.getElementById('form').addEventListener("submit", function(e) {
@@ -174,7 +176,7 @@
       document.getElementById('base64').value = image;
     }, false);
   </script>
-  <script>
+ <script>
     const webcamElement = document.getElementById('webcam');
     const snapButton = document.getElementById('snap');
     const canvasElement = document.getElementById('photoCanvas');
@@ -197,14 +199,15 @@
     // Función para tomar la foto
     function takeSnapshot() {
       const context = canvasElement.getContext('2d');
-      context.drawImage(webcamElement, 0, 0, canvas.width, canvas.height);
+      context.drawImage(webcamElement, 0, 0, canvasElement.width, canvasElement.height);
     }
 
     snapButton.addEventListener('click', takeSnapshot);
 
     // Iniciar la webcam al cargar la página
     startWebcam();
-  </script>
+</script>
+
   <footer>
     <div class="line"></div>
     <div class="text2">
