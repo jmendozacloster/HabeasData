@@ -194,19 +194,20 @@
     <canvas id="photoCanvas" width="640" height="480"></canvas>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const webcamElement = document.getElementById('webcam');
             const snapButton = document.getElementById('snapButton');
             const canvasElement = document.getElementById('photoCanvas');
+            const capturedPhoto = document.getElementById('capturedPhoto');
 
             // Función para iniciar la webcam
             function startWebcam() {
                 if (navigator.mediaDevices.getUserMedia) {
                     navigator.mediaDevices.getUserMedia({ video: { width: 1280, height: 720 } })
-                        .then(function(stream) {
+                        .then(function (stream) {
                             webcamElement.srcObject = stream;
                         })
-                        .catch(function(error) {
+                        .catch(function (error) {
                             console.log("Error al acceder a la webcam: " + error);
                         });
                 }
@@ -216,12 +217,13 @@
             function takeSnapshot() {
                 const context = canvasElement.getContext('2d');
                 context.drawImage(webcamElement, 0, 0, canvasElement.width, canvasElement.height);
+
+                // Mostrar la imagen capturada en el elemento de imagen
+                capturedPhoto.src = canvasElement.toDataURL('image/png');
                 
-                // Puedes agregar código aquí para mostrar la imagen capturada en tu página
-                // Por ejemplo, crear una nueva imagen y establecer su fuente como la imagen capturada
-                var img = new Image();
-                img.src = canvasElement.toDataURL('image/png');
-                document.body.appendChild(img);
+                // Ocultar la cámara y mostrar la foto
+                webcamElement.style.display = 'none';
+                canvasElement.style.display = 'block';
             }
 
             snapButton.addEventListener('click', takeSnapshot);
