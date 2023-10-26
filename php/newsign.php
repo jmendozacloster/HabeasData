@@ -83,6 +83,14 @@
     </form>
   </div>
 
+  <div id="video-container">
+        <video id="video" autoplay></video>
+        <canvas id="canvas"></canvas>
+    </div>
+    <button id="capture-button">Tomar Foto</button>
+
+  
+
   <script>
     function validateForm() {
       var name = document.querySelector('input[name="name"]').value;
@@ -176,68 +184,6 @@
       document.getElementById('base64').value = image;
     }, false);
   </script>
-    
-    <div id="video-container">
-        <video id="video" autoplay></video>
-        <canvas id="canvas"></canvas>
-    </div>
-    <button id="capture-button">Tomar Foto</button>
-
-    <style>
-        #video-container {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        video {
-            width: 50%;
-            max-height: 300px;
-        }
-
-        canvas {
-            width: 50%;
-            max-height: 300px;
-        }
-    </style>
-
-    <script>
-      // Obtener elementos HTML
-const video = document.getElementById('video');
-const canvas = document.getElementById('canvas');
-const captureButton = document.getElementById('capture-button');
-
-// Verificar si el navegador admite la API de medios
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices
-        .getUserMedia({ video: true }) // Acceder a la cámara
-        .then(function(stream) {
-            // Mostrar el video de la cámara en el elemento 'video'
-            video.srcObject = stream;
-        })
-        .catch(function(error) {
-            console.error('Error al acceder a la cámara: ', error);
-        });
-}
-
-// Evento al hacer clic en el botón para capturar una foto
-captureButton.addEventListener('click', function() {
-    // Capturar una imagen del video y mostrarla en el canvas
-    const context = canvas.getContext('2d');
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-    // Opcionalmente, puedes convertir la imagen en una URL de datos (data URL)
-    const imageDataUrl = canvas.toDataURL('image/jpeg'); // Cambia 'image/jpeg' según el formato deseado
-
-    // Crear una nueva imagen HTML y establecer su fuente como la imagen capturada
-    const capturedImage = new Image();
-    capturedImage.src = imageDataUrl;
-
-    // Agregar la imagen capturada a un elemento de tu página (por ejemplo, un div)
-    const imageContainer = document.getElementById('captured-image-container');
-    imageContainer.appendChild(capturedImage);
-});
-
-    </script>
 
   <footer>
     <div class="line"></div>
