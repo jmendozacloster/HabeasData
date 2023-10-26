@@ -177,62 +177,73 @@
     }, false);
   </script>
 
+  <div id="video-container">
+        <video id="video" autoplay></video>
+        <canvas id="canvas"></canvas>
+    </div>
+    <button id="capture-button">Tomar Foto</button>
+
+    <style>
+        #video-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        video {
+            width: 50%;
+            max-height: 300px;
+        }
+
+        canvas {
+            width: 50%;
+            max-height: 300px;
+        }
+    </style>
+
+        <script>
+          // Obtener elementos HTML
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const captureButton = document.getElementById('capture-button');
+
+// Verificar si el navegador admite la API de medios
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices
+        .getUserMedia({ video: true }) // Acceder a la cámara
+        .then(function(stream) {
+            // Mostrar el video de la cámara en el elemento 'video'
+            video.srcObject = stream;
+        })
+        .catch(function(error) {
+            console.error('Error al acceder a la cámara: ', error);
+        });
+}
+
+// Evento al hacer clic en el botón para capturar una foto
+captureButton.addEventListener('click', function() {
+    // Capturar una imagen del video y mostrarla en el canvas
+    const context = canvas.getContext('2d');
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    // Opcionalmente, puedes convertir la imagen en una URL de datos (data URL)
+    const imageDataUrl = canvas.toDataURL('image/jpeg'); // Cambia 'image/jpeg' según el formato deseado
+
+    // Crear una nueva imagen HTML y establecer su fuente como la imagen capturada
+    const capturedImage = new Image();
+    capturedImage.src = imageDataUrl;
+
+    // Agregar la imagen capturada a un elemento de tu página (por ejemplo, un div)
+    const imageContainer = document.getElementById('captured-image-container');
+    imageContainer.appendChild(capturedImage);
+});
+        </script>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Captura de Foto</title>
 </head>
-
-    <!-- Elemento de video para mostrar la cámara web -->
-    <video id="webcam" autoplay></video>
-    
-    <!-- Botón para tomar la foto -->
-    <button id="snapButton">Tomar Foto</button>
-    
-    <!-- Elemento de lienzo para mostrar la foto capturada -->
-    <canvas id="photoCanvas" width="640" height="480"></canvas>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const webcamElement = document.getElementById('webcam');
-            const snapButton = document.getElementById('snapButton');
-            const canvasElement = document.getElementById('photoCanvas');
-            const capturedPhoto = document.getElementById('capturedPhoto');
-
-            // Función para iniciar la webcam
-            function startWebcam() {
-                if (navigator.mediaDevices.getUserMedia) {
-                    navigator.mediaDevices.getUserMedia({ video: { width: 1280, height: 720 } })
-                        .then(function (stream) {
-                            webcamElement.srcObject = stream;
-                        })
-                        .catch(function (error) {
-                            console.log("Error al acceder a la webcam: " + error);
-                        });
-                }
-            }
-
-            // Función para tomar la foto
-            function takeSnapshot() {
-                const context = canvasElement.getContext('2d');
-                context.drawImage(webcamElement, 0, 0, canvasElement.width, canvasElement.height);
-
-                // Mostrar la imagen capturada en el elemento de imagen
-                capturedPhoto.src = canvasElement.toDataURL('image/png');
-                
-                // Ocultar la cámara y mostrar la foto
-                webcamElement.style.display = 'none';
-                canvasElement.style.display = 'block';
-            }
-
-            snapButton.addEventListener('click', takeSnapshot);
-
-            // Iniciar la webcam al cargar la página
-            startWebcam();
-        });
-    </script>
-
 </html>
 
 
